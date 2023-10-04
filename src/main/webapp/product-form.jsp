@@ -24,19 +24,22 @@
         <%}%>
         <form class="product-form" action="admin/add-product" method="post" enctype="multipart/form-data">
                 <label for="file-upload" class="drop-container" id="dropcontainer">
-                    <span class="drop-title">Släpp din produkt bild här</span>
-                    <input type="file" id="file-upload" accept="image/*" required>
+                    <span class="drop-title">Ladda upp bild</span>
+                    eller
+                    <div class="file-upload-container">
+                        <input type="file" id="file-upload" accept="image/*" required style="display: block">
+                    </div>
                 </label>
             <div class="coolinput" style="justify-content: space-between">
-                <input type="text" placeholder="Produkt namn" name="name" id="name"class="input"style="height: 70px">
-                <input type="text" placeholder="Antal" name="antal" id="quantity" class="input"style="height: 70px">
-                <input type="text" placeholder="Pris" name="pris" id="price" class="input"style="height: 70px">
+                <input type="text" placeholder="Produkt namn" name="name" id="name"class="input"style="padding-bottom: 40px">
+                <input type="text" placeholder="Antal" name="antal" id="quantity" class="input"style="padding-bottom: 40px">
+                <input type="text" placeholder="Pris" name="pris" id="price" class="input"style="padding-bottom: 40px">
 
             </div>
         </form>
     </div>
         <div class="coolinput"style="width: 637px;">
-            <input type="text"  placeholder="Beskrivning" name="description" id="description" class="input"style="height: 200px">
+            <input type="text"  placeholder="Beskrivning" name="description" id="description" class="input"style="padding-bottom: 200px;vertical-align: top">
             <a type="submit" class="button1" style="margin-top: 10px">Lägg till produkt</a>
         </div>
 </div>

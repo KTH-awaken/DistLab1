@@ -180,8 +180,12 @@ body{
     color: #444;
     cursor: pointer;
     transition: background .2s ease-in-out, border .2s ease-in-out;
-}
+    width: 255px;
 
+}
+.test{
+    color: green;
+}
 .drop-container:hover {
     background: #ffffff;
     border-color: #9db3f6;
@@ -197,4 +201,7 @@ body{
     font-weight: bold;
     text-align: center;
     transition: color .2s ease-in-out;
+}
+.file-upload-container{
+    padding-left: 100px;
 }

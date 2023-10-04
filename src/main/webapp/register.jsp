@@ -11,8 +11,7 @@
     <title>Login</title>
     <style ><jsp:directive.include file="styles.css"/></style>
 </head>
-<body>
-<div class="page">
+<body class="page">
     <jsp:include page="navbar.jsp"></jsp:include>
     <div class="welcome-text">
         <h2>
@@ -26,7 +25,7 @@
         <%=request.getAttribute("alert")%>
         <%}%>
         <form class="form">
-            <div class="coolinput">
+            <div class="coolinput"style="gap: 10px">
                 <input type="text" placeholder="Användarnamn" name="input" class="input">
                 <input type="text" placeholder="E-postadress" name="input" class="input">
                 <input type="text" placeholder="Lösenord" name="input" class="input">
@@ -34,7 +33,5 @@
             </div>
         </form>
     </div>
-</div>
-</div>
 </body>
 </html>

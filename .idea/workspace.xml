@@ -10,39 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e617d3d9-fb8d-4f5b-9748-ad798dd2baff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/DBContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/ProductHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/UserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/DBActions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/ItemInfo/ProductInto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/ItemInfo/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/Product/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/AddProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/Product/ProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/ProductDetailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/Product/ProductListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/ProductListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/User/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/User/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/User/SignUpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/SignUpServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/indexServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/ActionResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Cart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Error/ErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Error/UIErrorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Filters/AdminAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/ICartDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/IOrderDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/IProductDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/IUserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/ProductDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/Database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/Database/DatabaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DatabaseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +41,8 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="Tomcat 10.1.132" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.132" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="DistLab1:war exploded">
           <settings>
