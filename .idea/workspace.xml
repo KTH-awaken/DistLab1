@@ -10,7 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0b66183-f14d-4a56-8c52-e3badaea09fa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/DBContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/ProductHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/UserHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DBManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DatabaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/DBActions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/ProductDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/UserDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/SignUpServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/AddProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/ProductDetailServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/ProductListServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Error/UIErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/ItemInfo/ProductInto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/ItemInfo/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +59,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2WG7LHgDtWQx9IuSM8hVi8E0jDJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -54,7 +74,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/hamadaaljarrah/Documents/Distributed system/DistLab1/src/main/webapp",
+    "last_opened_file_path": "/Users/hamadaaljarrah/Documents/Distributed system/DistLab1/src/main/java/com/example/distlab1/BO",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,6 +90,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/distlab1" />
     </key>
@@ -175,7 +196,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696347008185</updated>
       <workItem from="1696347009625" duration="2000" />
-      <workItem from="1696347075802" duration="17673000" />
+      <workItem from="1696347075802" duration="34104000" />
     </task>
     <servers />
   </component>
