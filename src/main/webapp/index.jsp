@@ -10,7 +10,6 @@
     </head>
     <body class="page">
         <jsp:include page="navbar.jsp"></jsp:include>
-
         <div class="welcome-text">
             <h2>
                 Store.<span style="color: #6e6e73"> Det bästa stället att <br/>
@@ -18,6 +17,9 @@
             </h2>
         </div>
 <%--        <button href="products">Shop now</button>--%>
-        <a href="products" class="button1">Shop now</a>
+        <div class="buttonPlacement1">
+            <a href="products" class="button2">Shop now</a>
+        </div>
     </body>
 </html>
+

@@ -9,37 +9,37 @@
 <html>
 <head>
     <title>Product form</title>
+    <style ><jsp:directive.include file="styles.css"/></style>
+
 </head>
-<body>
+<body class="page">
 <jsp:include page="navbar.jsp"></jsp:include>
 
-<div>
-    <form action="admin/add-product" method="post" enctype="multipart/form-data">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name"/>
-        </div>
-        <div>
-            <label for="description">Description</label>
-            <input type="text" name="description" id="description"/>
+<div class="form-container">
+    <div class="product-form-container" >
+        <br>
+        <%--  Show alert--%>
+        <%if(request.getAttribute("alert") != null) {%>
+        <%=request.getAttribute("alert")%>
+        <%}%>
+        <form class="product-form" action="admin/add-product" method="post" enctype="multipart/form-data">
+                <label for="file-upload" class="drop-container" id="dropcontainer">
+                    <span class="drop-title">Släpp din produkt bild här</span>
+                    <input type="file" id="file-upload" accept="image/*" required>
+                </label>
+            <div class="coolinput" style="justify-content: space-between">
+                <input type="text" placeholder="Produkt namn" name="name" id="name"class="input"style="height: 70px">
+                <input type="text" placeholder="Antal" name="antal" id="quantity" class="input"style="height: 70px">
+                <input type="text" placeholder="Pris" name="pris" id="price" class="input"style="height: 70px">
 
+            </div>
+        </form>
+    </div>
+        <div class="coolinput"style="width: 637px;">
+            <input type="text"  placeholder="Beskrivning" name="description" id="description" class="input"style="height: 200px">
+            <a type="submit" class="button1" style="margin-top: 10px">Lägg till produkt</a>
         </div>
-        <div>
-            <label for="quantity">Quantity</label>
-            <input type="number" name="quantity" id="quantity"/>
-
-        </div>
-        <div>
-            <label for="price">Price</label>
-            <input type="number" name="price" id="price"/>
-        </div>
-        <div>
-            <label for="image">Image</label>
-            <input type="file" name="image" id="image"/>
-
-        </div>
-        <button type="submit">Add product</button>
-    </form>
 </div>
+
 </body>
 </html>

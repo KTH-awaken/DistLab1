@@ -9,27 +9,29 @@
 <html>
 <head>
     <title>Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <style ><jsp:directive.include file="styles.css"/></style>
 </head>
-<body>
-<jsp:include page="navbar.jsp"></jsp:include>
-
-    <%--  Show alert--%>
-    <%if(request.getAttribute("alert") != null) {%>
-    <%=request.getAttribute("alert")%>
-    <%}%>
-    <form action="/login" method="post">
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email"/>
+<body class="page">
+    <jsp:include page="navbar.jsp"></jsp:include>
+        <div class="welcome-text">
+            <h2>
+                <span>Logga in för snabbare betalning.</span>
+            </h2>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password"/>
-        </div>
-        <button type="submit">Login</button>
-    </form>
-<p>Login</p>
+        <div class="form-container">
+            <br>
+            <%--  Show alert--%>
+            <%if(request.getAttribute("alert") != null) {%>
+            <%=request.getAttribute("alert")%>
+            <%}%>
+                    <form class="form">
+                        <div class="coolinput" style="gap: 10px">
+                            <input type="text" placeholder="E-postadress" name="input" class="input">
+                            <input type="text" placeholder="Lösenord" name="input" class="input">
+                            <a href="products" class="button1">Logga in</a>
+                        </div>
+                        <p class="message">Har du inget konto? <a href="register.jsp">Skapa ett eget nu</a></p>
+                    </form>
+            </div>
 </body>
 </html>
