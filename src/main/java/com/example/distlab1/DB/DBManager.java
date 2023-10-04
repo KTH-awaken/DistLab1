@@ -1,4 +1,4 @@
-package com.example.distlab1.DB.Database;
+package com.example.distlab1.DB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,11 +6,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseConnection  {
-    private static DatabaseConnection instance = null;
+public class DBManager {
+    private static DBManager instance = null;
     private final List<Connection> connectionPool = new ArrayList<>();
     private final String user;
     private final String password;
+
 
 
     /**
@@ -18,9 +19,9 @@ public class DatabaseConnection  {
      * @return singleton instance
      * OHA only one homie att a time protocol
      */
-    public static synchronized DatabaseConnection getInstance() {
+    public static synchronized DBManager getInstance() {
         if (instance == null) {
-            instance = new DatabaseConnection();
+            instance = new DBManager();
         }
         return instance;
     }
@@ -79,12 +80,27 @@ public class DatabaseConnection  {
     }
 
 
+    public void startTransaction(Connection connection) throws DatabaseException {
+        try {
+            connection.setAutoCommit(false);
+        }catch (SQLException e){
+            throw new DatabaseException(e.getMessage(), e);
+        }
+    }
+    public void commitTransaction(Connection connection) throws DatabaseException {
+        try {
+            connection.commit();
+            connection.setAutoCommit(true);
+        }catch (SQLException e){
+            throw new DatabaseException(e.getMessage(), e);
+        }
+    }
 
-    private DatabaseConnection() {
+    private DBManager() {
         // TODO: add database security if possible
+        initializeConnectionPool();
         this.user = "root";
         this.password = "root";
-        initializeConnectionPool();
     }
     private void initializeConnectionPool() {
         int maxPoolSize = 10;

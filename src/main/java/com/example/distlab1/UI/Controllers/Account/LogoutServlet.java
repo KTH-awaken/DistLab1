@@ -1,4 +1,4 @@
-package com.example.distlab1.BO.Controllers.User;
+package com.example.distlab1.UI.Controllers.Account;
 
 
 import jakarta.servlet.annotation.WebServlet;

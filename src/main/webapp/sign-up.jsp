@@ -9,10 +9,10 @@
 <html>
 <head>
     <title>Sign up</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
-<body>
+<body class="page">
   <%--  Show alert--%>
   <%if(request.getAttribute("alert") != null) {%>
     <%=request.getAttribute("alert")%>

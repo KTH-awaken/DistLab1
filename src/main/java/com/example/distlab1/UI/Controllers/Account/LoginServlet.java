@@ -1,10 +1,11 @@
-package com.example.distlab1.BO.Controllers.User;
+package com.example.distlab1.UI.Controllers.Account;
 
 
-import com.example.distlab1.BO.Entities.User;
-import com.example.distlab1.BO.Error.ErrorHandler;
-import com.example.distlab1.DB.DAO.Implementation.UserDAO;
-import com.example.distlab1.DB.Database.DatabaseException;
+
+import com.example.distlab1.BO.Handlers.UserHandler;
+import com.example.distlab1.DB.DatabaseException;
+import com.example.distlab1.UI.Error.UIErrorHandler;
+import com.example.distlab1.UI.ItemInfo.UserInfo;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -26,7 +27,7 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         try {
-            User user = new UserDAO().getUserByEmailAndPassword(email, password);
+            UserInfo user = UserHandler.handleLogin(email, password);
             if(user != null){
                 // Success login
                 HttpSession session = req.getSession();
@@ -45,7 +46,7 @@ public class LoginServlet extends HttpServlet {
             }
 
         } catch (DatabaseException e) {
-            ErrorHandler.handleDatabaseException(req, res,e);
+            UIErrorHandler.handleDatabaseException(req, res,e);
         }
 
     }
