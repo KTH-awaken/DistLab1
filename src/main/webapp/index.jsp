@@ -20,4 +20,5 @@
 <%--        <button href="products">Shop now</button>--%>
         <a href="products" class="button1">Shop now</a>
     </body>
+
 </html>

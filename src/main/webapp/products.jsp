@@ -1,5 +1,5 @@
-<%@ page import="com.example.distlab1.BO.Entities.Product" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.example.distlab1.UI.ItemInfo.ProductInto" %><%--
   Created by IntelliJ IDEA.
   User: hamadaaljarrah
   Date: 2023-10-02
@@ -18,8 +18,8 @@
     <%
         Object data = request.getAttribute("products");
         if (data !=null) {
-            ArrayList<Product> products = (ArrayList<Product>) data;
-            for (Product product : products) {
+            ArrayList<ProductInto> products = (ArrayList<ProductInto>) data;
+            for (ProductInto product : products) {
     %>
 
     <div class="p-4 rounded-lg shadow-lg w-[300px]">

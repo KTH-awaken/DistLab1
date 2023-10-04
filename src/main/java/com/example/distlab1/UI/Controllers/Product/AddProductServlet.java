@@ -1,14 +1,16 @@
-package com.example.distlab1.BO.Controllers.Product;
+package com.example.distlab1.UI.Controllers.Product;
 
-import com.example.distlab1.BO.Entities.User;
-import com.example.distlab1.BO.Error.ErrorHandler;
-import com.example.distlab1.DB.DAO.Implementation.ProductDAO;
-import com.example.distlab1.DB.Database.DatabaseException;
+import com.example.distlab1.BO.Handlers.ProductHandler;
+import com.example.distlab1.DB.DatabaseException;
+import com.example.distlab1.UI.Error.UIErrorHandler;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,8 +30,6 @@ public class AddProductServlet extends HttpServlet {
     }
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
-
-
         // Get user inputs
         String name = req.getParameter("name");
         String description = req.getParameter("description");
@@ -41,11 +41,11 @@ public class AddProductServlet extends HttpServlet {
 
         try {
             // Create product
-            new ProductDAO().addProduct(name,description,price,quantity,inputStream);
+            ProductHandler.addProduct(name,description,price,quantity,inputStream);
             res.sendRedirect("/products");
 
         } catch (DatabaseException e) {
-            ErrorHandler.handleDatabaseException(req,res,e);
+            UIErrorHandler.handleDatabaseException(req,res,e);
         }
 
 

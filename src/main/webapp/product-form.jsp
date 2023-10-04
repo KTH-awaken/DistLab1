@@ -13,8 +13,9 @@
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>
 
-<div>
-    <form action="admin/add-product" method="post" enctype="multipart/form-data">
+
+
+    <form action="/admin/add-product" method="post" enctype="multipart/form-data">
         <div>
             <label for="name">Name</label>
             <input type="text" name="name" id="name"/>

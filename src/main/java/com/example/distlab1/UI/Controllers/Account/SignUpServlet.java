@@ -1,11 +1,10 @@
-package com.example.distlab1.BO.Controllers.User;
+package com.example.distlab1.UI.Controllers.Account;
 
 
-import com.example.distlab1.BO.Entities.ActionResult;
-import com.example.distlab1.BO.Entities.User;
-import com.example.distlab1.BO.Error.ErrorHandler;
-import com.example.distlab1.DB.DAO.Implementation.UserDAO;
-import com.example.distlab1.DB.Database.DatabaseException;
+
+import com.example.distlab1.BO.Handlers.UserHandler;
+import com.example.distlab1.DB.DatabaseException;
+import com.example.distlab1.UI.Error.UIErrorHandler;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,8 +26,8 @@ public class SignUpServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         try {
-            ActionResult<User> result = new UserDAO().addUser(username, email, password);
-            if(result.isSuccess()){
+            boolean result = UserHandler.registerUser(username,email,password);
+            if(result){
                 res.sendRedirect("/login");
             } else {
                 String alert = "<div class=\"p-4 bg-red-500/30 text-red-500 rounder-md \">\n" +
@@ -41,7 +40,7 @@ public class SignUpServlet extends HttpServlet {
             }
 
         } catch (DatabaseException e) {
-            ErrorHandler.handleDatabaseException(req, res,e);
+            UIErrorHandler.handleDatabaseException(req, res,e);
         }
 
 
