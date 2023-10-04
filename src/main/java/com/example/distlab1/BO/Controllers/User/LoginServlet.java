@@ -18,7 +18,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
-        req.getRequestDispatcher("login.jsp").forward(req,res);
+        req.getRequestDispatcher("/login.jsp").forward(req,res);
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("user", user);
                 // Expiration 3days
                 session.setMaxInactiveInterval(3 * 24 * 60 * 60);
-                req.getRequestDispatcher("profile.jsp").forward(req,res);
+                req.getRequestDispatcher("/index.jsp").forward(req,res);
             } else {
                 String alert = "<div class=\"p-4 bg-red-500/30 text-red-500 rounder-md \">\n" +
                         "          <p style=\"font-family: Ubuntu-Bold; font-size: 18px; margin: 0.25em 0; text-align: center\">\n" +
@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
                         "          </p>\n" +
                         "       </div>";
                 req.setAttribute("alert", alert);
-                req.getRequestDispatcher("login.jsp").forward(req, res);
+                req.getRequestDispatcher("/login.jsp").forward(req, res);
             }
 
         } catch (DatabaseException e) {

@@ -25,7 +25,7 @@ public class ProductListServlet extends HttpServlet {
 
             List<Product> products = new ProductDAO().getAllProducts();
             req.setAttribute("products", products);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("products.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/products.jsp");
             dispatcher.forward(req, res);
 
         } catch (DatabaseException e) {

@@ -23,7 +23,7 @@ public class ProductDetailServlet extends HttpServlet {
         try {
             Product  product = new ProductDAO().getProductById(id);
             req.setAttribute("product", product);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("product-detail.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/product-detail.jsp");
             dispatcher.forward(req, res);
 
         } catch (DatabaseException e) {

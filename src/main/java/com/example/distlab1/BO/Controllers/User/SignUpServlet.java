@@ -18,7 +18,7 @@ import java.io.IOException;
 public class SignUpServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
-        req.getRequestDispatcher("sign-up.jsp").forward(req,res);
+        req.getRequestDispatcher("/sign-up.jsp").forward(req,res);
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -37,7 +37,7 @@ public class SignUpServlet extends HttpServlet {
                         "          </p>\n" +
                         "       </div>";
                 req.setAttribute("alert", alert);
-                req.getRequestDispatcher("sign-up.jsp").forward(req, res);
+                req.getRequestDispatcher("/sign-up.jsp").forward(req, res);
             }
 
         } catch (DatabaseException e) {

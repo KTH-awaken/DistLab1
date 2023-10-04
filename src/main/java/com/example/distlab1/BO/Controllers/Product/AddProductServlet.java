@@ -22,7 +22,7 @@ public class AddProductServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
         // Serv product-form page
-        RequestDispatcher dispatcher = req.getRequestDispatcher("product-form.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/product-form.jsp");
         dispatcher.forward(req, res);
 
     }
@@ -42,7 +42,7 @@ public class AddProductServlet extends HttpServlet {
         try {
             // Create product
             new ProductDAO().addProduct(name,description,price,quantity,inputStream);
-            res.sendRedirect("products");
+            res.sendRedirect("/products");
 
         } catch (DatabaseException e) {
             ErrorHandler.handleDatabaseException(req,res,e);
