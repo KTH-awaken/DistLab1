@@ -21,7 +21,8 @@
             ArrayList<Product> products = (ArrayList<Product>) data;
             for (Product product : products) {
     %>
-            <div class="p-4 rounded-lg shadow-lg w-[300px]">
+
+    <div class="p-4 rounded-lg shadow-lg w-[300px]">
                 <img class="product-image h-[200px] w-full object-cover" src="data:image/jpg;base64,<%=product.getBase64Image()%>">
                 <div>
                     <a href="product-detail?id=<%=product.getId()%>"><%= product.getName()%></a>
