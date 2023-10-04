@@ -1,19 +1,19 @@
-package com.example.distlab1.DB.DAO.Implementation;
+package com.example.distlab1.DB.ItemDB;
 
-import com.example.distlab1.BO.Entities.ActionResult;
 import com.example.distlab1.BO.Entities.User;
-import com.example.distlab1.DB.DAO.IUserDAO;
-import com.example.distlab1.DB.Database.DBManager;
-import com.example.distlab1.DB.Database.DatabaseException;
+import com.example.distlab1.DB.DBManager;
+import com.example.distlab1.DB.DatabaseException;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
-public class UserDAO  implements IUserDAO {
-    @Override
-    public List<User> getAllUsers() throws DatabaseException {
-        List<User> userList = new ArrayList<>();
+public class UserDB {
+
+
+    protected UserDB(){};
+
+    public ArrayList<User> getUsers() throws DatabaseException {
+        ArrayList<User> userList = new ArrayList<>();
 
         try {
             // Acquire connection
@@ -25,12 +25,13 @@ public class UserDAO  implements IUserDAO {
 
             // Iterate through the result set and populate the user list
             while (resultSet.next()) {
-                User user = new User();
-                user.setId(resultSet.getInt("id"));
-                user.setUsername(resultSet.getString("username"));
-                user.setEmail(resultSet.getString("email"));
-                user.setRole(resultSet.getString("role"));
-                userList.add(user);
+                userList.add(new User(
+                        resultSet.getInt("id"),
+                        resultSet.getString("username"),
+                        resultSet.getString("email"),
+                        resultSet.getString("password"),
+                        resultSet.getString("role")
+                ));
             }
 
             // Release connection
@@ -42,8 +43,6 @@ public class UserDAO  implements IUserDAO {
         return userList;
     }
 
-
-    @Override
     public User getUserById(int id) throws DatabaseException {
         User user = null;
         try {
@@ -56,10 +55,12 @@ public class UserDAO  implements IUserDAO {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                user = new User();
-                user.setId(resultSet.getInt("id"));
-                user.setUsername(resultSet.getString("username"));
-                user.setEmail(resultSet.getString("email"));
+                int userId = resultSet.getInt("id");
+                String username = resultSet.getString("username");
+                String email = resultSet.getString("email");
+                String password = resultSet.getString("password");
+                String role = resultSet.getString("role");
+                user = new User(userId, username, email, password, role);
             }
 
             // Release connection
@@ -72,12 +73,67 @@ public class UserDAO  implements IUserDAO {
         return user;
     }
 
-    @Override
+    public boolean addUser(String username, String email, String password) throws DatabaseException {
+        boolean success = false;
+
+        // Check if the user exists
+        if (userExists(email)) {
+            return false;
+        }
+
+
+        try {
+            DBManager db = DBManager.getInstance();
+            // Acquire connection
+            Connection conn  = db.getConnection();
+
+            // Start transaction
+            db.startTransaction(conn);
+
+            // Insert into t_users table
+            String insertUserSQL = "INSERT INTO t_users (username, email, password) VALUES (?, ?, ?)";
+            PreparedStatement userStatement = conn.prepareStatement(insertUserSQL, Statement.RETURN_GENERATED_KEYS);
+            userStatement.setString(1, username);
+            userStatement.setString(2, email);
+            userStatement.setString(3, password);
+
+            int result = userStatement.executeUpdate();
+
+            if (result > 0) {
+                ResultSet generatedKeys = userStatement.getGeneratedKeys();
+                int userId = -1;
+
+                if (generatedKeys.next()) {
+                    userId = generatedKeys.getInt(1);
+
+                    // Create a cart for the user
+                    String cartSql = "INSERT INTO t_carts (user_id) VALUES (?)";
+                    PreparedStatement cartStatement = conn.prepareStatement(cartSql);
+                    cartStatement.setInt(1, userId);
+
+                    int cartInsertResult = cartStatement.executeUpdate();
+
+                    if (cartInsertResult > 0) {
+                        // Commit transaction
+                        success = true;
+                        db.commitTransaction(conn);
+
+                    }
+                }
+            }
+            // Release connection
+            db.releaseConnection(conn);
+
+        } catch (SQLException e) {
+            throw new DatabaseException(e.getMessage(), e);
+        }
+
+        return success;
+    }
+
     public User getUserByEmailAndPassword(String email, String password) throws DatabaseException {
         User user = null;
         try {
-
-
 
             // Acquire connection
             Connection conn = DBManager.getInstance().getConnection();
@@ -106,81 +162,16 @@ public class UserDAO  implements IUserDAO {
         return user;
     }
 
-
-
-    @Override
-    public ActionResult<User> addUser(String username, String email, String password) throws DatabaseException {
-        ActionResult<User> actionResult = new ActionResult<>();
-
-        // Check if the user exists
-        if (userExists(email)) {
-            return new ActionResult<>(false, "User with the given email already exists", null);
-        }
-
-
-        try {
-            // Acquire connection
-            Connection conn  = DBManager.getInstance().getConnection();
-
-            // Start transaction
-            conn.setAutoCommit(false);
-
-            // Insert into t_users table
-            String insertUserSQL = "INSERT INTO t_users (username, email, password) VALUES (?, ?, ?)";
-            PreparedStatement userStatement = conn.prepareStatement(insertUserSQL, Statement.RETURN_GENERATED_KEYS);
-            userStatement.setString(1, username);
-            userStatement.setString(2, email);
-            userStatement.setString(3, password);
-
-            int result = userStatement.executeUpdate();
-
-            if (result > 0) {
-                ResultSet generatedKeys = userStatement.getGeneratedKeys();
-                int userId = -1;
-
-                if (generatedKeys.next()) {
-                    userId = generatedKeys.getInt(1);
-
-                    // Create a cart for the user
-                    String cartSql = "INSERT INTO t_carts (user_id) VALUES (?)";
-                    PreparedStatement cartStatement = conn.prepareStatement(cartSql);
-                    cartStatement.setInt(1, userId);
-
-                    int cartInsertResult = cartStatement.executeUpdate();
-
-                    if (cartInsertResult > 0) {
-                        actionResult.setSuccess(true);
-                        actionResult.setMessage("User registered successfully");
-                        // Commit transaction
-                        conn.commit();
-                        conn.setAutoCommit(true);
-
-                    }
-                }
-            }
-            // Release connection
-            DBManager.getInstance().releaseConnection(conn);
-
-        } catch (SQLException e) {
-            throw new DatabaseException(e.getMessage(), e);
-        }
-
-        return actionResult;
-    }
-
-
-
-
-    @Override
     public boolean updateUserById(int id, User updated) throws DatabaseException {
         boolean success = false;
 
         try {
+            DBManager db = DBManager.getInstance();
             // Acquire connection
-            Connection conn = DBManager.getInstance().getConnection();
+            Connection conn = db.getConnection();
             String sql = "UPDATE t_users SET username = ?, email = ?, password = ?, role = ? WHERE id = ?";
 
-            conn.setAutoCommit(false);
+            db.startTransaction(conn);
             // Start transaction
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, updated.getUsername());
@@ -192,23 +183,17 @@ public class UserDAO  implements IUserDAO {
             int result = preparedStatement.executeUpdate();
             if (result > 0) {
                 success = true ;
-                conn.commit();
+                db.commitTransaction(conn);
             }
 
-            conn.setAutoCommit(true);
 
             // Release connection
-            DBManager.getInstance().releaseConnection(conn);
+            db.releaseConnection(conn);
         } catch (SQLException e) {
             throw new DatabaseException(e.getMessage(), e);
         }
 
         return success;
-    }
-
-    @Override
-    public User deleteUserById(int id) {
-        return null;
     }
 
     private boolean userExists(String email) throws DatabaseException {
@@ -231,6 +216,7 @@ public class UserDAO  implements IUserDAO {
             throw new DatabaseException(e.getMessage(), e);
         }
     }
+
 
 
 }

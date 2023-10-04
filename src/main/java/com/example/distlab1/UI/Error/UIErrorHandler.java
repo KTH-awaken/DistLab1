@@ -1,6 +1,6 @@
-package com.example.distlab1.BO.Error;
+package com.example.distlab1.UI.Error;
 
-import com.example.distlab1.DB.Database.DatabaseException;
+import com.example.distlab1.DB.DatabaseException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class ErrorHandler {
+public class UIErrorHandler {
 
     public static void handleDatabaseException(HttpServletRequest req, HttpServletResponse res, DatabaseException e) throws ServletException, IOException {
         String errorMessage = "An error occurred: " + e.getMessage();

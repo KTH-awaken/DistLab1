@@ -1,4 +1,4 @@
-package com.example.distlab1.DB.Database;
+package com.example.distlab1.DB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,6 +11,7 @@ public class DBManager {
     private final List<Connection> connectionPool = new ArrayList<>();
     private final String user;
     private final String password;
+
 
 
     /**
@@ -79,6 +80,21 @@ public class DBManager {
     }
 
 
+    public void startTransaction(Connection connection) throws DatabaseException {
+        try {
+            connection.setAutoCommit(false);
+        }catch (SQLException e){
+            throw new DatabaseException(e.getMessage(), e);
+        }
+    }
+    public void commitTransaction(Connection connection) throws DatabaseException {
+        try {
+            connection.commit();
+            connection.setAutoCommit(true);
+        }catch (SQLException e){
+            throw new DatabaseException(e.getMessage(), e);
+        }
+    }
 
     private DBManager() {
         // TODO: add database security if possible

@@ -1,5 +1,5 @@
-<%@ page import="com.example.distlab1.BO.Entities.Product" %>
-<%@ page import="com.example.distlab1.BO.Entities.Product" %><%--
+
+<%@ page import="com.example.refactor.UI.ItemInfo.ProductInto" %><%--
   Created by IntelliJ IDEA.
   User: hamadaaljarrah
   Date: 2023-10-02
@@ -15,7 +15,7 @@
 
 <%
     Object data = request.getAttribute("product");
-    Product product = (Product) data;
+    ProductInto product = (ProductInto) data;
  %>
 
 <div class="p-4 rounded-lg shadow-lg w-[600px]">

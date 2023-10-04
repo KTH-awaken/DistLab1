@@ -1,11 +1,7 @@
-package com.example.distlab1.BO.Filters;
+package com.example.distlab1.Filters;
 
-import com.example.distlab1.BO.Entities.User;
-import jakarta.servlet.Filter;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
+import com.example.distlab1.UI.ItemInfo.UserInfo;
+import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -32,7 +28,7 @@ public class AdminAuthFilter implements Filter {
         }
 
 
-        User user = (User) session.getAttribute("user");
+        UserInfo user = (UserInfo) session.getAttribute("user");
         if(user == null){
             req.getRequestDispatcher("/login.jsp").forward(req,res);
             return;

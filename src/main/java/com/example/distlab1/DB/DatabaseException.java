@@ -1,4 +1,4 @@
-package com.example.distlab1.DB.Database;
+package com.example.distlab1.DB;
 
 public class DatabaseException extends Exception {
 
