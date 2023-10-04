@@ -1,18 +1,21 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>JSP - Hello World</title>
-</head>
-<body>
-<div>Lest go</div>
-<h1><%= "Hello World!4" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
-<br/>
-<a href="/add-product">Add product</a>
-<br/>
-<a href="/products">All products</a>
-</body>
+    <head>
+        <title>JSP - Hello World</title>
+<%--        <link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/styles.css">--%>
+        <style ><jsp:directive.include file="styles.css"/></style>
+
+    </head>
+    <body class="page">
+        <jsp:include page="navbar.jsp"></jsp:include>
+
+        <div class="welcome-text">
+            <h2>
+                Store.<span style="color: #6e6e73"> Det bästa stället att <br/>
+                köpa dina favoritprodukter.</span>
+            </h2>
+        </div>
+            <br/>
+    </body>
 </html>

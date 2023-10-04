@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/products")
+@WebServlet("/")
 public class ProductListServlet extends HttpServlet {
 
 
@@ -21,7 +21,7 @@ public class ProductListServlet extends HttpServlet {
 
         List<Product> products = new ProductService().getAllProducts();
         req.setAttribute("products", products);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("products.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         dispatcher.forward(req, res);
 
     }
