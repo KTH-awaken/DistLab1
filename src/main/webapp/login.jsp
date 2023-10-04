@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.distlab1.DB.DAO.Implementation.ProductDAO" %><%--
   Created by IntelliJ IDEA.
   User: hamadaaljarrah
   Date: 2023-10-03

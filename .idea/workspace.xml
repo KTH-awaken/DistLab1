@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0b66183-f14d-4a56-8c52-e3badaea09fa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Filters/AdminAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Filters/AdminAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/UserDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696347008185</updated>
       <workItem from="1696347009625" duration="2000" />
-      <workItem from="1696347075802" duration="16178000" />
+      <workItem from="1696347075802" duration="17673000" />
     </task>
     <servers />
   </component>

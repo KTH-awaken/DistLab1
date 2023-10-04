@@ -2,8 +2,7 @@ package com.example.distlab1.DB.DAO.Implementation;
 
 import com.example.distlab1.DB.DAO.IProductDAO;
 import com.example.distlab1.BO.Entities.Product;
-import com.example.distlab1.DB.DAO.IProductDAO;
-import com.example.distlab1.DB.Database.DatabaseConnection;
+import com.example.distlab1.DB.Database.DBManager;
 import com.example.distlab1.DB.Database.DatabaseException;
 
 import java.io.ByteArrayOutputStream;
@@ -27,7 +26,7 @@ public class ProductDAO implements IProductDAO {
 
         try {
             // Acquire connection
-            Connection conn = DatabaseConnection.getInstance().getConnection();
+            Connection conn = DBManager.getInstance().getConnection();
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -44,7 +43,7 @@ public class ProductDAO implements IProductDAO {
             }
 
             // Release connection
-            DatabaseConnection.getInstance().releaseConnection(conn);
+            DBManager.getInstance().releaseConnection(conn);
         } catch (SQLException | IOException  e) {
             throw new DatabaseException(e.getMessage(), e);
         }
@@ -59,7 +58,7 @@ public class ProductDAO implements IProductDAO {
 
         try {
             // Acquire connection
-            Connection conn = DatabaseConnection.getInstance().getConnection();
+            Connection conn = DBManager.getInstance().getConnection();
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             ResultSet resultSet  = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -72,7 +71,7 @@ public class ProductDAO implements IProductDAO {
 
             }
             // Release connection
-            DatabaseConnection.getInstance().releaseConnection(conn);
+            DBManager.getInstance().releaseConnection(conn);
 
         } catch (SQLException | IOException e) {
             throw new DatabaseException(e.getMessage(), e);
@@ -90,7 +89,7 @@ public class ProductDAO implements IProductDAO {
 
         try{
             // Acquire connection
-            Connection conn = DatabaseConnection.getInstance().getConnection();
+            Connection conn = DBManager.getInstance().getConnection();
             String t_product_sql = "insert into t_products (name, description, quantity, price, image) values (?, ?, ?, ?, ?)";
 
             // Start transaction
@@ -113,7 +112,7 @@ public class ProductDAO implements IProductDAO {
             conn.setAutoCommit(true);
 
             // Release connection
-            DatabaseConnection.getInstance().releaseConnection(conn);
+            DBManager.getInstance().releaseConnection(conn);
         } catch (SQLException e) {
             throw new DatabaseException(e.getMessage(),e);
         }
