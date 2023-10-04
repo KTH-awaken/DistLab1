@@ -11,9 +11,10 @@
     <title>Product form</title>
 </head>
 <body>
+<jsp:include page="navbar.jsp"></jsp:include>
 
-
-    <form action="add-product" method="post" enctype="multipart/form-data">
+<div>
+    <form action="admin/add-product" method="post" enctype="multipart/form-data">
         <div>
             <label for="name">Name</label>
             <input type="text" name="name" id="name"/>
@@ -39,5 +40,6 @@
         </div>
         <button type="submit">Add product</button>
     </form>
+</div>
 </body>
 </html>

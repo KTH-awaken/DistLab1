@@ -14,6 +14,7 @@
 
 </head>
     <body>
+
     <%
         Object data = request.getAttribute("products");
         if (data !=null) {
@@ -26,8 +27,6 @@
                     <a href="product-detail?id=<%=product.getId()%>"><%= product.getName()%></a>
                     <p>Price: <%= product.getPrice()%> kr</p>
                 </div>
-
-                
             </div>
         <%
             }

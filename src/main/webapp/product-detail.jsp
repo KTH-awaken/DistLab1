@@ -12,6 +12,7 @@
     <title>Product detail</title>
 </head>
 <body>
+<jsp:include page="navbar.jsp"></jsp:include>
 
 <%
     Object data = request.getAttribute("product");
