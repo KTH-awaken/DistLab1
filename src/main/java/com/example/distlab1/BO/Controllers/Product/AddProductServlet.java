@@ -1,32 +1,33 @@
-package com.example.distlab1.BO.Controllers;
+package com.example.distlab1.BO.Controllers.Product;
 
-import com.example.distlab1.BO.Services.IProductService;
-import com.example.distlab1.BO.Services.Imlementations.ProductService;
+import com.example.distlab1.BO.Entities.User;
+import com.example.distlab1.BO.Error.ErrorHandler;
+import com.example.distlab1.DB.DAO.Implementation.ProductDAO;
+import com.example.distlab1.DB.Database.DatabaseException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 
-@WebServlet("/add-product")
+@WebServlet("/admin/add-product")
 @MultipartConfig
 public class AddProductServlet extends HttpServlet {
 
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+
         // Serv product-form page
         RequestDispatcher dispatcher = req.getRequestDispatcher("product-form.jsp");
         dispatcher.forward(req, res);
 
     }
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+
 
 
         // Get user inputs
@@ -38,13 +39,19 @@ public class AddProductServlet extends HttpServlet {
         Part part = req.getPart("image");
         InputStream inputStream = part.getInputStream();
 
-        // Create product
-        IProductService pServ = new ProductService();
-        pServ.addProduct(name,description,price,quantity,inputStream);
+        try {
+            // Create product
+            new ProductDAO().addProduct(name,description,price,quantity,inputStream);
+            res.sendRedirect("products");
 
-        //Redirect to products page
-        res.sendRedirect("products");
+        } catch (DatabaseException e) {
+            ErrorHandler.handleDatabaseException(req,res,e);
+        }
+
 
     }
+
+
+
 
 }

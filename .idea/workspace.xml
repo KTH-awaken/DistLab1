@@ -10,12 +10,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0b66183-f14d-4a56-8c52-e3badaea09fa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/User/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/User/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/User/SignUpServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/ActionResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Error/ErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Filters/AdminAuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/access-denied.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/Product/AddProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/ProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/Product/ProductDetailServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/ProductListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Controllers/Product/ProductListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Services/IProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Services/Imlementations/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/IUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/IUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DAO/Implementation/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-form.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -166,7 +200,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696347008185</updated>
       <workItem from="1696347009625" duration="2000" />
-      <workItem from="1696347075802" duration="2615000" />
+      <workItem from="1696347075802" duration="15532000" />
     </task>
     <servers />
   </component>

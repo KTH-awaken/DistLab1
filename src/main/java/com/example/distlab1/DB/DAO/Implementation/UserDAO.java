@@ -1,5 +1,6 @@
 package com.example.distlab1.DB.DAO.Implementation;
 
+import com.example.distlab1.BO.Entities.ActionResult;
 import com.example.distlab1.BO.Entities.User;
 import com.example.distlab1.DB.DAO.IUserDAO;
 import com.example.distlab1.DB.Database.DatabaseConnection;
@@ -78,6 +79,9 @@ public class UserDAO  implements IUserDAO {
     public User getUserByEmailAndPassword(String email, String password) throws DatabaseException {
         User user = null;
         try {
+
+
+
             // Acquire connection
             Connection conn = DatabaseConnection.getInstance().getConnection();
             String sql = "SELECT * FROM t_users WHERE email = ? AND password = ?";
@@ -109,10 +113,16 @@ public class UserDAO  implements IUserDAO {
 
 
     @Override
-    public boolean addUser(String username, String email, String password) throws DatabaseException {
-        boolean success = false;
+    public ActionResult<User> addUser(String username, String email, String password) throws DatabaseException {
+        ActionResult<User> actionResult = new ActionResult<>();
+
+        // Check if user exist
+        if(userExit(email)){
+            return new ActionResult<>(false, "User with given email already exist", null);
+        }
 
         try {
+
             // Acquire connection
             Connection conn = DatabaseConnection.getInstance().getConnection();
             String sql = "INSERT INTO t_users (username, email, password) VALUES (?, ?, ?)";
@@ -128,7 +138,8 @@ public class UserDAO  implements IUserDAO {
 
             int result = preparedStatement.executeUpdate();
             if (result > 0) {
-                success = true;
+                actionResult.setSuccess(true);
+                actionResult.setMessage("User registered successfully");
                 conn.commit();
             }
 
@@ -141,7 +152,7 @@ public class UserDAO  implements IUserDAO {
             throw new DatabaseException(e.getMessage(), e);
         }
 
-        return success;
+        return actionResult;
     }
 
 
@@ -186,14 +197,26 @@ public class UserDAO  implements IUserDAO {
         return null;
     }
 
+    private boolean userExit(String email) throws DatabaseException {
+        try {
+            // Acquire connection
+            Connection conn = DatabaseConnection.getInstance().getConnection();
+            String sql = "SELECT * FROM t_users WHERE email = ?";
 
-    public static void main(String[] args) throws DatabaseException {
-        UserDAO userDao =  new UserDAO();
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-//        System.out.println(userDao.getAllUsers());
-//        System.out.println(userDao.getUserByEmailAndPassword("hamada@gmail.com", "123123"));
-//        System.out.println(userDao.getUserByEmailAndPassword("hamada@gmail.com", "222222"));
+            // Release connection
+            DatabaseConnection.getInstance().releaseConnection(conn);
 
+            // Return if a user with the specified email exist
+            return resultSet.next();
 
+        } catch (SQLException  e) {
+            throw new DatabaseException(e.getMessage(), e);
+        }
     }
+
+
 }

@@ -11,7 +11,7 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <br/>
-<a href="/add-product">Add product</a>
+<a href="/admin/add-product">Add product</a>
 <br/>
 <a href="/products">All products</a>
 </body>
