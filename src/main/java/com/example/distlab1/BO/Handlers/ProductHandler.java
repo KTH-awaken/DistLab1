@@ -12,7 +12,7 @@ public class ProductHandler {
 
     static public void addProduct(String name, String description, double price, int quantity, InputStream image) throws DatabaseException {
         DBContext db = new DBContext();
-        db.product().addProduct(name, description,price,quantity,image);
+        db.product().insertProduct(name, description,price,quantity,image);
     }
 
     static public ProductDTO getProductById(int id) throws DatabaseException{

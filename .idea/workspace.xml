@@ -10,24 +10,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e617d3d9-fb8d-4f5b-9748-ad798dd2baff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/OrderHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/OrderDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AuthenticatedFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/UnauthenticatedFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/WarehouseAuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/OrderServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/OrderDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a/storage_v2/_src_/schema/webshop.Stz5SA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a/storage_v2/_src_/schema/webshop.Stz5SA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/ProductHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/ProductHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/UserHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/DBActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/DBActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/ProductDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/UserDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/LoginServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/LogoutServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/SignUpServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/AddProductServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/ProductDetailServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/ProductListServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/ItemInfo/ProductInto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/ItemInfo/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/AccountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/JavaProgram/DistLab1/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.1.0.jar",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",

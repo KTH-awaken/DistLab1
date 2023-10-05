@@ -98,8 +98,8 @@ public class DBManager {
 
     private DBManager() {
         // TODO: add database security if possible
-        this.user = "root";
-        this.password = "root";
+        this.user = "super";
+        this.password = "super";
         initializeConnectionPool();
     }
     private void initializeConnectionPool() {

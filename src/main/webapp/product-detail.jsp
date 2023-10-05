@@ -29,6 +29,9 @@
         <p><%= product.getDescription()%></p>
 
         <h5>Price: <%= product.getPrice()%></h5>
+        <form action="/add-to-cart?id=<%=product.getId()%>" method="post">
+            <button type="submit">Add To cart</button>
+        </form>
     </div>
 
 

@@ -932,6 +932,11 @@ webshop|schema||root|localhost|UPDATE|G</Grants>
     </schema>
     <schema id="290" parent="1" name="webshop">
       <Current>1</Current>
+<<<<<<< HEAD
+=======
+      <IntrospectionTimestamp>2023-10-04.23:30:12</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-10-04.19:30:12</LocalIntrospectionTimestamp>
+>>>>>>> devH1
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="291" parent="1" name="root">
@@ -1028,7 +1033,11 @@ product_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="311" parent="294" name="id">
+<<<<<<< HEAD
       <AutoIncrement>2</AutoIncrement>
+=======
+      <AutoIncrement>3</AutoIncrement>
+>>>>>>> devH1
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

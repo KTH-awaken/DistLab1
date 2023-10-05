@@ -4,8 +4,8 @@ package com.example.distlab1.UI.Controllers;
 
 import com.example.distlab1.BO.Handlers.UserHandler;
 import com.example.distlab1.DB.DatabaseException;
-import com.example.distlab1.UI.DTOs.UserDTO;
 import com.example.distlab1.UI.Error.UIErrorHandler;
+import com.example.distlab1.UI.DTOs.UserDTO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

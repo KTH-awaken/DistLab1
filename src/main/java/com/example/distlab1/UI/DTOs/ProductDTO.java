@@ -69,4 +69,16 @@ public class ProductDTO {
     public void setBase64Image(String base64Image) {
         this.base64Image = base64Image;
     }
+
+    @Override
+    public String toString() {
+        return "ProductInto{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", id=" + id +
+                ", base64Image='" + (base64Image != null )+
+                '}';
+    }
 }
