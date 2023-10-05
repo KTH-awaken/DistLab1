@@ -74,7 +74,7 @@ public class ProductDB {
         return product;
     }
 
-    public boolean addProduct(String name, String description, double price, int quantity, InputStream image) throws DatabaseException {
+    public boolean insertProduct(String name, String description, double price, int quantity, InputStream image) throws DatabaseException {
 
 
         boolean success= false;
@@ -109,6 +109,80 @@ public class ProductDB {
 
         return success;
     }
+
+    public boolean updateProduct(int id, String newName, String newDescription, double newPrice, int newQuantity, InputStream newImage) throws DatabaseException {
+        boolean success = false;
+
+        try {
+            // Acquire connection
+            DBManager db = DBManager.getInstance();
+            Connection conn = db.getConnection();
+
+            // Start transaction
+            db.startTransaction(conn);
+
+            // Update t_products table
+            String updateSql = "UPDATE t_products SET name = ?, description = ?, price = ?, quantity = ?, image = ? WHERE id = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(updateSql);
+            preparedStatement.setString(1, newName);
+            preparedStatement.setString(2, newDescription);
+            preparedStatement.setDouble(3, newPrice);
+            preparedStatement.setInt(4, newQuantity);
+            preparedStatement.setBlob(5, newImage);
+            preparedStatement.setInt(6, id);
+
+
+            int result = preparedStatement.executeUpdate();
+
+            if (result > 0) {
+                success = true;
+                db.commitTransaction(conn);
+            }
+
+            // Release connection
+            db.releaseConnection(conn);
+        } catch (SQLException e) {
+            throw new DatabaseException(e.getMessage(), e);
+        }
+
+        return success;
+    }
+    public boolean deleteProduct(int id) throws DatabaseException {
+        boolean success = false;
+
+        try {
+            // Acquire connection
+            DBManager db = DBManager.getInstance();
+            Connection conn = db.getConnection();
+
+            // Start transaction
+            db.startTransaction(conn);
+
+            // Delete from t_products table
+            String deleteSql = "DELETE FROM t_products WHERE id = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(deleteSql);
+            preparedStatement.setInt(1, id);
+
+            int result = preparedStatement.executeUpdate();
+
+            if (result > 0) {
+                success = true;
+                db.commitTransaction(conn);
+            }
+
+            // Release connection
+            db.releaseConnection(conn);
+        } catch (SQLException e) {
+            throw new DatabaseException(e.getMessage(), e);
+        }
+
+        return success;
+    }
+
+
+
+
+
 
     private String getBase64Image(Blob blob) throws SQLException, IOException {
         InputStream inputStream = blob.getBinaryStream();

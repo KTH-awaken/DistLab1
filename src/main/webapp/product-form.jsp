@@ -33,13 +33,13 @@
                         </label>
                     <div class="coolinput" style="justify-content: space-between">
                         <input type="text" placeholder="Produkt namn" name="name" id="name"class="input"style="padding-bottom: 40px">
-                        <input type="text" placeholder="Antal" name="antal" id="quantity" class="input"style="padding-bottom: 40px">
-                        <input type="text" placeholder="Pris" name="pris" id="price" class="input"style="padding-bottom: 40px">
+                        <input type="number" placeholder="Antal" name="quantity" id="quantity" class="input"style="padding-bottom: 40px">
+                        <input type="number" placeholder="Pris" name="price" id="price" class="input"style="padding-bottom: 40px">
                     </div>
                 </div>
                 <div class="coolinput"style="width: 637px;margin-top: 10px">
                     <input type="text"  placeholder="Beskrivning" name="description" id="description" class="input"style="padding-bottom: 200px;vertical-align: top">
-                    <a type="submit" class="button1" style="margin-top: 10px" onclick="console.log('submit clicked')">Lägg till produkt</a>
+                    <button type="submit" class="button1" style="margin-top: 10px" onclick="console.log('submit clicked')">Lägg till produkt</button>
                 </div>
             </form>
         </div>

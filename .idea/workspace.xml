@@ -10,14 +10,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e617d3d9-fb8d-4f5b-9748-ad798dd2baff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/OrderHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/OrderDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AuthenticatedFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/UnauthenticatedFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/WarehouseAuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/AccountServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/CartServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/OrderServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/ProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/order-success.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a/storage_v2/_src_/schema/webshop.Stz5SA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04580c83-8859-4bb3-babb-b8e9debb5b7a/storage_v2/_src_/schema/webshop.Stz5SA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/AddProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/ProductHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/ProductHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/UserHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/DBActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/DBActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/ProductDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/UserDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/LoginServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/LogoutServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Account/SignUpServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/ManageProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/ProductDetailServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/Product/ProductListServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/ItemInfo/ProductInto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/ItemInfo/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/product-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,19 +79,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/JavaProgram/DistLab1/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.1.0.jar",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JavaProgram/DistLab1/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.1.0.jar&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Diff &amp; Merge&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Tomcat 10.1.132" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.132" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -64,8 +106,8 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="b245472e-f3d0-4422-af75-7fb1b2a2665d" />
-        <option name="HTTP_PORT" value="8078" />
-        <option name="JNDI_PORT" value="1088" />
+        <option name="HTTP_PORT" value="8077" />
+        <option name="JNDI_PORT" value="1087" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -151,7 +193,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696501024862</updated>
-      <workItem from="1696501028261" duration="3636000" />
+      <workItem from="1696501028261" duration="1976000" />
     </task>
     <servers />
   </component>
@@ -168,6 +210,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/product-form.jsp</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

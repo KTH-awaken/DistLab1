@@ -81,7 +81,7 @@ public class Product {
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", id=" + id +
-                ", base64Image='" + base64Image + '\'' +
+                ", base64Image='" + (base64Image != null )+ '\'' +
                 '}';
     }
 }

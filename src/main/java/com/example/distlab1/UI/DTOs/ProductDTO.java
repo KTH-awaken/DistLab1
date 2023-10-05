@@ -1,6 +1,6 @@
-package com.example.distlab1.UI.ItemInfo;
+package com.example.distlab1.UI.DTOs;
 
-public class ProductInto {
+public class ProductDTO {
 
     private  String name;
     private  String description;
@@ -9,11 +9,11 @@ public class ProductInto {
     private  Integer id;
     private String base64Image;
 
-    public ProductInto(){
+    public ProductDTO(){
 
     }
 
-    public ProductInto(String name, String description, int quantity, double price, Integer id, String base64Image) {
+    public ProductDTO(String name, String description, int quantity, double price, Integer id, String base64Image) {
         this.name = name;
         this.description = description;
         this.quantity = quantity;
@@ -68,5 +68,17 @@ public class ProductInto {
 
     public void setBase64Image(String base64Image) {
         this.base64Image = base64Image;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductInto{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", id=" + id +
+                ", base64Image='" + (base64Image != null )+
+                '}';
     }
 }
