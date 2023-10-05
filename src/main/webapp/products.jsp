@@ -9,9 +9,9 @@
 </head>
     <body class="page">
         <jsp:include page="/navbar.jsp"></jsp:include>
-
+        <div class="layout-container">
         <div class="welcome-text">
-            <h2>
+            <h2 class="my-4">
                 Store.<span style="color: #6e6e73"> Det bästa stället att <br/>
                 köpa dina favoritprodukter.</span>
             </h2>
@@ -59,7 +59,7 @@
 <%--                }--%>
 <%--            %>--%>
 <%--        </div>--%>
-        <div class="products-container">
+        <div class="flex flex-row ">
             <%
                 Object data = request.getAttribute("products");
                 if (data != null) {
@@ -81,6 +81,7 @@
                     }
                 }
             %>
+            </div>
         </div>
 
         <script>

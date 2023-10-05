@@ -10,16 +10,21 @@
     </head>
     <body class="page">
         <jsp:include page="navbar.jsp"></jsp:include>
-        <div class="welcome-text">
-            <h2>
-                Store.<span style="color: #6e6e73"> Det bästa stället att <br/>
+
+        <div class="layout-container">
+            <div class="welcome-text">
+                <h2>
+                    Store.<span style="color: #6e6e73"> Det bästa stället att <br/>
                 köpa dina favoritprodukter.</span>
-            </h2>
+                </h2>
+            </div>
+            <%--        <button href="products">Shop now</button>--%>
+            <div class="buttonPlacement1">
+                <a href="products" class="button2">Shop now</a>
+            </div>
+
         </div>
-<%--        <button href="products">Shop now</button>--%>
-        <div class="buttonPlacement1">
-            <a href="products" class="button2">Shop now</a>
-        </div>
+
     </body>
 </html>
 
