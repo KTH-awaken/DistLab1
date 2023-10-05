@@ -2,7 +2,7 @@ package com.example.distlab1.BO.Handlers;
 
 import com.example.distlab1.BO.Entities.Product;
 import com.example.distlab1.DB.DatabaseException;
-import com.example.distlab1.UI.ItemInfo.ProductInto;
+import com.example.distlab1.UI.DTOs.ProductDTO;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -15,15 +15,15 @@ public class ProductHandler {
         db.product().addProduct(name, description,price,quantity,image);
     }
 
-    static public ProductInto getProductById(int id) throws DatabaseException{
+    static public ProductDTO getProductById(int id) throws DatabaseException{
         DBContext db = new DBContext();
         return mapProduct(db.product().getProductById(id));
 
     }
 
-    static public ArrayList<ProductInto> getProducts() throws DatabaseException{
+    static public ArrayList<ProductDTO> getProducts() throws DatabaseException{
         DBContext db = new DBContext();
-        ArrayList<ProductInto> productsToReturn = new ArrayList<>();
+        ArrayList<ProductDTO> productsToReturn = new ArrayList<>();
         ArrayList<Product> ps = db.product().getProducts();
 
         for(Product p:ps )
@@ -33,8 +33,8 @@ public class ProductHandler {
     }
 
 
-    private static ProductInto mapProduct(Product p){
-        ProductInto productToReturn = new ProductInto();
+    private static ProductDTO mapProduct(Product p){
+        ProductDTO productToReturn = new ProductDTO();
         productToReturn.setId(p.getId());
         productToReturn.setName(p.getName());
         productToReturn.setDescription(p.getDescription());

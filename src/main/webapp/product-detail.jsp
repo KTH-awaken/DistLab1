@@ -1,5 +1,5 @@
 
-<%@ page import="com.example.distlab1.UI.ItemInfo.ProductInto" %><%--
+<%@ page import="com.example.distlab1.UI.DTOs.ProductDTO" %><%--
   Created by IntelliJ IDEA.
   User: hamadaaljarrah
   Date: 2023-10-02
@@ -16,7 +16,7 @@
 
 <%
     Object data = request.getAttribute("product");
-    ProductInto product = (ProductInto) data;
+    ProductDTO product = (ProductDTO) data;
  %>
 
 <div class="p-4 rounded-lg shadow-lg w-[600px]">

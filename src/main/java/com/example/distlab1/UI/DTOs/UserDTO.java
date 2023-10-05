@@ -1,6 +1,6 @@
-package com.example.distlab1.UI.ItemInfo;
+package com.example.distlab1.UI.DTOs;
 
-public class UserInfo {
+public class UserDTO {
     private int id;
 
     private String username;
@@ -8,8 +8,8 @@ public class UserInfo {
     private String role;
 
 
-    public UserInfo(){}
-    public UserInfo(int id, String username, String email, String role) {
+    public UserDTO(){}
+    public UserDTO(int id, String username, String email, String role) {
         this.id = id;
         this.username = username;
         this.email = email;

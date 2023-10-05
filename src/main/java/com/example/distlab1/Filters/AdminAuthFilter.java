@@ -1,6 +1,6 @@
 package com.example.distlab1.Filters;
 
-import com.example.distlab1.UI.ItemInfo.UserInfo;
+import com.example.distlab1.UI.DTOs.UserDTO;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,7 +28,7 @@ public class AdminAuthFilter implements Filter {
         }
 
 
-        UserInfo user = (UserInfo) session.getAttribute("user");
+        UserDTO user = (UserDTO) session.getAttribute("user");
         if(user == null){
             req.getRequestDispatcher("/login.jsp").forward(req,res);
             return;
