@@ -58,7 +58,7 @@ public class ProductDB {
             while (resultSet.next()) {
                 product.setId(resultSet.getInt("id"));
                 product.setName(resultSet.getString("name"));
-                product.setDescription(resultSet.getString("price"));
+                product.setDescription(resultSet.getString("description"));
                 product.setQuantity(resultSet.getInt("quantity"));
                 product.setPrice(resultSet.getDouble("price"));
                 product.setBase64Image(getBase64Image(resultSet.getBlob("image")));

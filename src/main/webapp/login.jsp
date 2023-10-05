@@ -18,11 +18,11 @@
             <%if(request.getAttribute("alert") != null) {%>
             <%=request.getAttribute("alert")%>
             <%}%>
-                    <form class="form">
+                    <form action="/login" method="post" class="form">
                         <div class="coolinput" style="gap: 10px">
-                            <input type="text" placeholder="E-postadress" name="input" class="input">
-                            <input type="text" placeholder="Lösenord" name="input" class="input">
-                            <a href="products" class="button1">Logga in</a>
+                            <input type="text" placeholder="E-postadress" name="email" id="email" class="input">
+                            <input type="password" placeholder="Lösenord" name="password" id="password"  class="input">
+                            <button type="submit" href="products" class="button1">Logga in</button>
                         </div>
                         <p class="message">Har du inget konto? <a href="register.jsp">Skapa ett eget nu</a></p>
                     </form>

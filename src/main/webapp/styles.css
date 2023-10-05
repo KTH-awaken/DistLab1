@@ -1,6 +1,11 @@
 body{
     font-family: 'San Francisco', Arial, sans-serif;
 }
+.layout-container{
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+}
 .page{
     background-color: #f5f5f7;
     display: flex;
@@ -154,6 +159,7 @@ body{
     border-radius: 20px;
     width: 400px;
     height: 500px;
+    object-fit: cover;
 }
 .product-text {
     position: absolute;

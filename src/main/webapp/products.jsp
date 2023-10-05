@@ -31,6 +31,8 @@
                             <p>Från <%= new DecimalFormat("0").format(product.getPrice()) %> kr</p>
                         </div>
                 </a>
+
+
             <%
                     }
                 }
