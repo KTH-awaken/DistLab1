@@ -1,4 +1,4 @@
-package com.example.distlab1.UI.Controllers.Product;
+package com.example.distlab1.UI.Controllers;
 
 import com.example.distlab1.BO.Handlers.ProductHandler;
 import com.example.distlab1.DB.DatabaseException;
@@ -16,20 +16,48 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-@WebServlet("/admin/add-product")
+@WebServlet({"/admin/add-product", "/admin/edit-product"})
 @MultipartConfig
-public class AddProductServlet extends HttpServlet {
+public class ManageProductServlet extends HttpServlet {
 
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+        String action = req.getServletPath();
 
-        // Serv product-form page
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/product-form.jsp");
-        dispatcher.forward(req, res);
+        switch (action){
+            case "/admin/add-product":
+                req.getRequestDispatcher("/product-form.jsp").forward(req, res);
+                break;
+            case "/admin/edit-product":
+                editProduct(req, res);
+                break;
+            default:
+                req.getRequestDispatcher("/").forward(req,res);
+        }
+
+
 
     }
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
+        String action = req.getServletPath();
+
+        switch (action){
+            case "/admin/add-product":
+                addProduct(req, res);
+                break;
+            case "/admin/edit-product":
+                editProduct(req, res);
+                break;
+            default:
+                req.getRequestDispatcher("/").forward(req,res);
+        }
+
+
+    }
+
+
+    private void addProduct(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
         // Get user inputs
         String name = req.getParameter("name");
         String description = req.getParameter("description");
@@ -47,11 +75,10 @@ public class AddProductServlet extends HttpServlet {
         } catch (DatabaseException e) {
             UIErrorHandler.handleDatabaseException(req,res,e);
         }
-
-
     }
 
-
-
+    private void editProduct(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
+        System.out.println("editing product...");
+    }
 
 }

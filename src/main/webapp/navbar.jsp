@@ -14,10 +14,12 @@
 </head>
 <body>
 <div class="topnav">
-    <a class="<%= request.getRequestURI().endsWith("index.jsp") ? "active" : "" %>" href="index.jsp">Hem</a>
-    <a class="<%= request.getRequestURI().endsWith("login.jsp") ? "active" : "" %>" href="login.jsp">Logga in</a>
-    <a class="<%= request.getRequestURI().endsWith("login.jsp") ? "active" : "" %>" href="product-form.jsp">Lägg till produkt</a>
-    <a class="<%= request.getRequestURI().endsWith("login.jsp") ? "active" : "" %>" href="products">All produkter</a>
+    <a class="<%= request.getRequestURI().endsWith("index.jsp") ? "active" : "" %>" href="/">Hem</a>
+    <a class="<%= request.getRequestURI().endsWith("login.jsp") ? "active" : "" %>" href="/login">Logga in</a>
+    <a class="<%= request.getRequestURI().endsWith("login.jsp") ? "active" : "" %>" href="/admin/add-product">Lägg till produkt</a>
+    <a class="<%= request.getRequestURI().endsWith("login.jsp") ? "active" : "" %>" href="/products">All produkter</a>
+    <a class="<%= request.getRequestURI().endsWith("login.jsp") ? "active" : "" %>" href="/cart">cart</a>
+
 </div>
 </body>
 </html>

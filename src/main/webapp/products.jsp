@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.example.distlab1.UI.ItemInfo.ProductInto" %><%--
+<%@ page import="com.example.distlab1.UI.DTOs.ProductDTO" %><%--
   Created by IntelliJ IDEA.
   User: hamadaaljarrah
   Date: 2023-10-02
@@ -18,14 +18,14 @@
     <%
         Object data = request.getAttribute("products");
         if (data !=null) {
-            ArrayList<ProductInto> products = (ArrayList<ProductInto>) data;
-            for (ProductInto product : products) {
+            ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) data;
+            for (ProductDTO product : products) {
     %>
 
     <div class="p-4 rounded-lg shadow-lg w-[300px]">
                 <img class="product-image h-[200px] w-full object-cover" src="data:image/jpg;base64,<%=product.getBase64Image()%>">
                 <div>
-                    <a href="product-detail?id=<%=product.getId()%>"><%= product.getName()%></a>
+                    <a href="/product-detail?id=<%=product.getId()%>"><%= product.getName()%></a>
                     <p>Price: <%= product.getPrice()%> kr</p>
                 </div>
             </div>

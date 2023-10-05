@@ -91,36 +91,19 @@ public class UserDB {
             db.startTransaction(conn);
 
             // Insert into t_users table
-            String insertUserSQL = "INSERT INTO t_users (username, email, password) VALUES (?, ?, ?)";
-            PreparedStatement userStatement = conn.prepareStatement(insertUserSQL, Statement.RETURN_GENERATED_KEYS);
+            String sql = "INSERT INTO t_users (username, email, password) VALUES (?, ?, ?)";
+            PreparedStatement userStatement = conn.prepareStatement(sql);
             userStatement.setString(1, username);
             userStatement.setString(2, email);
             userStatement.setString(3, password);
 
             int result = userStatement.executeUpdate();
-
             if (result > 0) {
-                ResultSet generatedKeys = userStatement.getGeneratedKeys();
-                int userId = -1;
-
-                if (generatedKeys.next()) {
-                    userId = generatedKeys.getInt(1);
-
-                    // Create a cart for the user
-                    String cartSql = "INSERT INTO t_carts (user_id) VALUES (?)";
-                    PreparedStatement cartStatement = conn.prepareStatement(cartSql);
-                    cartStatement.setInt(1, userId);
-
-                    int cartInsertResult = cartStatement.executeUpdate();
-
-                    if (cartInsertResult > 0) {
-                        // Commit transaction
-                        success = true;
-                        db.commitTransaction(conn);
-
-                    }
-                }
+                // Commit transaction
+                success = true;
+                db.commitTransaction(conn);
             }
+
             // Release connection
             db.releaseConnection(conn);
 
