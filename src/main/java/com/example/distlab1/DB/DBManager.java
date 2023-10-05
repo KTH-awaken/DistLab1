@@ -98,9 +98,9 @@ public class DBManager {
 
     private DBManager() {
         // TODO: add database security if possible
-        initializeConnectionPool();
         this.user = "root";
         this.password = "root";
+        initializeConnectionPool();
     }
     private void initializeConnectionPool() {
         int maxPoolSize = 10;
@@ -113,7 +113,7 @@ public class DBManager {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/webshop";
-            conn = DriverManager.getConnection(url, user, password);
+            conn = DriverManager.getConnection(url, user,password);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new database connection.", e);
         } catch (ClassNotFoundException e) {
