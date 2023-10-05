@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,13 +5,13 @@
     <style ><jsp:directive.include file="styles.css"/></style>
 </head>
 <body class="page">
-    <jsp:include page="navbar.jsp"></jsp:include>
-        <div class="welcome-text">
-            <h2>
-                <span>Logga in för snabbare betalning.</span>
-            </h2>
-        </div>
-        <div class="form-container">
+<jsp:include page="navbar.jsp"></jsp:include>
+<div class="welcome-text">
+    <h2>
+        <span>Logga in för snabbare betalning.</span>
+    </h2>
+</div>
+ <div class="form-container">
             <br>
             <%--  Show alert--%>
             <%if(request.getAttribute("alert") != null) {%>
@@ -27,5 +26,7 @@
                         <p class="message">Har du inget konto? <a href="register.jsp">Skapa ett eget nu</a></p>
                     </form>
             </div>
+    </form>
+</div>
 </body>
 </html>

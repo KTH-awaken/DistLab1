@@ -120,10 +120,9 @@ body{
     flex-direction: row;
     gap: 10px;
 }
-.input{
-    width: 100%;
-    /*margin-bottom: 10px;*/
-}
+/*.input{*/
+/*    !*margin-bottom: 10px;*!*/
+/*}*/
 
 .coolinput {
     display: flex;
@@ -139,7 +138,8 @@ body{
     position: relative;
 
 }
-.coolinput input[type=text].input {
+.coolinput .input {
+    width: 100%;
     min-height: 50px;
     padding: 14px 12px;
     font-size: 0.75rem;
@@ -160,6 +160,7 @@ body{
     width: 400px;
     height: 500px;
     object-fit: cover;
+    margin-right: 10px;
 }
 .product-text {
     position: absolute;
@@ -210,4 +211,8 @@ body{
 }
 .file-upload-container{
     padding-left: 100px;
+}
+.parent{
+    display: flex;
+    justify-content: center;
 }

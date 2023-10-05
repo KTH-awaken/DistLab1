@@ -24,14 +24,15 @@
         <%if(request.getAttribute("alert") != null) {%>
         <%=request.getAttribute("alert")%>
         <%}%>
-        <form class="form">
+        <form class="form" method="post"action="/sign-up">
             <div class="coolinput"style="gap: 10px">
-                <input type="text" placeholder="Användarnamn" name="input" class="input">
-                <input type="text" placeholder="E-postadress" name="input" class="input">
-                <input type="text" placeholder="Lösenord" name="input" class="input">
-                <a href="products" class="button1">Skapa konto</a>
+                <input type="text" placeholder="Användarnamn" name="username" id="username"class="input">
+                <input type="text" placeholder="E-postadress" name="email" id="email"class="input">
+                <input type="text" placeholder="Lösenord" name="password" id="password"class="input">
+                <button type="submit"  class="button1">Skapa konto</button>
             </div>
         </form>
+
     </div>
 </body>
 </html>

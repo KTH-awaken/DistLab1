@@ -33,8 +33,8 @@
                         </label>
                     <div class="coolinput" style="justify-content: space-between">
                         <input type="text" placeholder="Produkt namn" name="name" id="name"class="input"style="padding-bottom: 40px">
-                        <input type="number" placeholder="Antal" name="quantity" id="quantity" class="input"style="padding-bottom: 40px">
-                        <input type="number" placeholder="Pris" name="price" id="price" class="input"style="padding-bottom: 40px">
+                        <input type="text" placeholder="Antal" name="quantity" id="quantity" class="input"style="padding-bottom: 40px">
+                        <input type="text" placeholder="Pris" name="price" id="price" class="input"style="padding-bottom: 40px">
                     </div>
                 </div>
                 <div class="coolinput"style="width: 637px;margin-top: 10px">

@@ -33,13 +33,11 @@ public class UserDB {
                         resultSet.getString("role")
                 ));
             }
-
             // Release connection
             DBManager.getInstance().releaseConnection(conn);
         } catch (SQLException e) {
             throw new DatabaseException(e.getMessage(),e);
         }
-
         return userList;
     }
 
@@ -80,7 +78,6 @@ public class UserDB {
         if (userExists(email)) {
             return false;
         }
-
 
         try {
             DBManager db = DBManager.getInstance();
