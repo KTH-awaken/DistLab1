@@ -15,13 +15,15 @@
     <title>Product detail</title>
 </head>
 <body >
+<jsp:include page="navbar.jsp"></jsp:include>
+
 <%
     Object data = request.getAttribute("product");
     ProductDTO product = (ProductDTO) data;
  %>
 
 
-<div class="max-w-[1000px] h-screen  pt-[100px] px-2 m-auto">
+<div class="max-w-[1200px] h-screen  pt-[50px] px-2 m-auto">
 
 
     <div class="flex h-full justify-between ">
@@ -48,8 +50,8 @@
 
 
                 <div>
-                    <h3 class="font-semibold text-xl">Description</h3>
-                    <p class="font-light leading-6"><%= product.getDescription()%></p>
+                    <h3 class="font-semibold text-xl mb-3">Description</h3>
+                    <p class="font-light  text-md leading-6"><%= product.getDescription()%></p>
                 </div>
 
 

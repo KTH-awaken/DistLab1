@@ -16,6 +16,7 @@
 </head>
 <body>
 
+<jsp:include page="navbar.jsp"></jsp:include>
 
 
 <div class="layout-container">

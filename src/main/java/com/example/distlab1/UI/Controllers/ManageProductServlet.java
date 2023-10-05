@@ -2,6 +2,7 @@ package com.example.distlab1.UI.Controllers;
 
 import com.example.distlab1.BO.Handlers.ProductHandler;
 import com.example.distlab1.DB.DatabaseException;
+import com.example.distlab1.DB.ItemDB.UserDB;
 import com.example.distlab1.UI.Error.UIErrorHandler;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -98,7 +99,6 @@ public class ManageProductServlet extends HttpServlet {
         // Get upload image.
         Part part = req.getPart("image");
         InputStream inputStream = part.getInputStream();
-
         try {
             // Create product
             ProductHandler.addProduct(name,description,price,quantity,inputStream);
