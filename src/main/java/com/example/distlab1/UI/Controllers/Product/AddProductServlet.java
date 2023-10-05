@@ -29,7 +29,7 @@ public class AddProductServlet extends HttpServlet {
 
     }
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-
+        System.out.println("IN DO POST");
         // Get user inputs
         String name = req.getParameter("name");
         String description = req.getParameter("description");
