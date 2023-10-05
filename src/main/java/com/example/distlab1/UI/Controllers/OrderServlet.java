@@ -42,15 +42,19 @@ public class OrderServlet extends HttpServlet {
         HttpSession session = req.getSession();
         UserDTO user = (UserDTO)session.getAttribute("user");
         ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) session.getAttribute("cart");
+        //todo här fin listan av produket som ska sammanfatas vid slutet av en sucseful order
         System.out.println("User: "+ user);
         System.out.println("Products: " + products);
         int id = user.getId();
         try {
             OrderHandler.placeOrder(id, products);
-            req.getRequestDispatcher("/order-success.jsp").forward(req,res);
+//            req.getRequestDispatcher("/order-success").forward(req,res);
+            res.sendRedirect("/order-success");
+
         }catch (DatabaseException e){
             UIErrorHandler.handleDatabaseException(req, res, e);
         }
     }
+
 
 }
