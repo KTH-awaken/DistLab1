@@ -105,11 +105,12 @@ public class AccountServlet extends HttpServlet {
             UIErrorHandler.handleDatabaseException(req, res,e);
         }
     }
-    private void logout(HttpServletRequest req, HttpServletResponse res) throws IOException{
+    private void logout(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         HttpSession session = req.getSession(false);
-        if (session != null) {
+        UserDTO user = (UserDTO) session.getAttribute("user");
+        if (user != null) {
             session.invalidate();
-            res.sendRedirect("/login");
+            req.getRequestDispatcher("/login").forward(req, res);
         }
     }
 

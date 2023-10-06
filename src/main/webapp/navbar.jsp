@@ -14,6 +14,8 @@
                 </head>
 
                 <body>
+                <% UserDTO user = (UserDTO)session.getAttribute("user");%>
+
                     <div class="layout-container">
                         <div class="topnav ">
 
@@ -27,13 +29,16 @@
                                 </svg>
                             </div>
                             <div class="flex gap-4">
+                                <%if(user == null || user.getRole().compareTo("customer") == 0){%>
                                 <a class="<%= request.getRequestURI().endsWith(" index.jsp") ? "active" : "" %>"
                                     href="/">Hem</a>
+                                <%}%>
+                                <%if(user == null || user.getRole().compareTo("customer") == 0){%>
                                 <a class="<%= request.getRequestURI().endsWith(" products") ? "active" : "" %>"
                                     href="/products">Produkter</a>
-
+                                <%}%>
 <%--                                Admin Access--%>
-                                <% UserDTO user = (UserDTO)session.getAttribute("user");%>
+
                                 <%if(user != null){%>
                                 <%if (user.getRole().compareTo("admin") == 0) {%>
                                 <a class="<%= request.getRequestURI().endsWith(" admin/add-product") ? "active" : "" %>"
@@ -41,23 +46,59 @@
                                 <%}%>
                                 <%}%>
 
+<%--                            Edit Button--%>
+                                <%if(user != null){%>
+                                <%if (user.getRole().compareTo("admin") == 0) {%>
+                                <a class="<%= request.getRequestURI().endsWith(" admin/handle-products") ? "active" : "" %>"
+                                   href="/admin/handle-products">Radigera produkter</a>
+                                <%}%>
+                                <%}%>
+
+                                <%if(user != null){%>
+                                <%if (user.getRole().compareTo("warehouse") == 0) {%>
+                                <a class="<%= request.getRequestURI().endsWith(" warehouse/handle-order") ? "active" : "" %>"
+                                   href="/admin/add-product">Hantera beställningar</a>
+                                <%}%>
+                                <%}%>
+
 
                             </div>
 
                             <div class="flex ">
+<%--                                Login Button--%>
+                                <%if(user == null){%>
                                 <a class=" <%= request.getRequestURI().endsWith(" login") ? "active" : "" %>"
-                                    href="/login">
+                                   href="/login">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                         fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round">
                                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                         <circle cx="12" cy="7" r="4"></circle>
                                     </svg>
 
                                 </a>
+                                <%}%>
+
+<%--                                Logout Button--%>
+
+
+                                    <%if(user != null){%>
+                                    <form action="/logout" method="post">
+
+                                    <button type="submit">
+                                        <a href="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        </a>
+                                        <%}%>
+                                    </button>
+                                    </form>
+
+
+<%--                                Cart Button--%>
 
                                 <div class="relative">
-                                    <a class="relative  <%= request.getRequestURI().endsWith(" cart") ? "active" : "" %>
+                                    <%if(user == null || user.getRole().compareTo("customer") == 0){%>
+                                    <a class="relative  <%= request.getRequestURI().endsWith("cart") ? "active" : "" %>
                                         " href="/cart">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2"
@@ -66,8 +107,9 @@
                                             <circle cx="18" cy="20.5" r="1" />
                                             <path
                                                 d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
-                                        </svg> </a>
-
+                                        </svg>
+                                    </a>
+                                    <%}%>
                                     <%if (session.getAttribute("numOfCartItems") !=null) {%>
                                         <p
                                             class="absolute right-0 flex justify-center items-center text-sm text-white w-[20px] h-[20px] rounded-full z-10 bg-blue-500">

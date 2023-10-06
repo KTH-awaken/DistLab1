@@ -18,12 +18,11 @@ public class UnauthenticatedFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
 
         HttpSession session = req.getSession(false);
-
-        if(session.getAttribute("user") == null){
-            chain.doFilter(request,response);
+        if(session != null){
+            if(session.getAttribute("user") == null){
+                chain.doFilter(request,response);
+            }
         }
-
-
 
     }
 }
