@@ -13,8 +13,9 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
-@WebServlet({"/cart", "/add-to-cart", "/delete-from-cart"})
+@WebServlet({"/cart", "/add-to-cart", "/remove-from-cart"})
 public class CartServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -45,6 +46,17 @@ public class CartServlet extends HttpServlet {
     }
 
     private void removeFromCart(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
+        HttpSession session = req.getSession();
+        int productId = Integer.parseInt(req.getParameter("id"));
+        ArrayList<ProductDTO> cart =  (ArrayList<ProductDTO>) session.getAttribute("cart");
+
+        cart = cart.stream()
+                .filter(p -> p.getId() != productId)
+                .collect(Collectors.toCollection(ArrayList::new));
+        session.setAttribute("cart", cart);
+        session.setAttribute("numOfCartItems", cart.size());
+        res.sendRedirect("/cart");
+
 
     }
     private void addToCart(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

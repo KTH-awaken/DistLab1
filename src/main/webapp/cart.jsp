@@ -44,7 +44,7 @@
             <h3><%=product.getName()%></h3>
             <p>$ <%=product.getPrice()%> </p>
           </div>
-          <form action="remove-from-cart">
+          <form action="/remove-from-cart?id=<%=product.getId()%>" method="post">
             <button type="submit" class="p-2">
               X
             </button>
