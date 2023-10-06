@@ -57,12 +57,13 @@ public class CartServlet extends HttpServlet {
         if(previousCart != null){
             cart = new ArrayList<>(previousCart);
         }
+
         try {
             ProductDTO addedProduct = ProductHandler.getProductById(productId);
             cart.add(addedProduct);
             session.setAttribute("cart", cart);
-            req.setAttribute("cart", cart);
-            req.getRequestDispatcher("/cart.jsp").forward(req,res);
+            session.setAttribute("numOfCartItems", cart.size());
+            res.sendRedirect("/product-detail?id="+productId);
         } catch (DatabaseException e){
             UIErrorHandler.handleDatabaseException(req ,res, e);
         }

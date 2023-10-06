@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.example.distlab1.UI.DTOs.ProductDTO" %><%--
   Created by IntelliJ IDEA.
   User: Marcus
   Date: 2023-10-02
@@ -31,12 +32,20 @@
 
         </div>
 
-        <div class="self-end">
-            <a class="<%= request.getRequestURI().endsWith("login") ? "active" : "" %>" href="/login">
+        <div class="flex ">
+            <a class=" <%= request.getRequestURI().endsWith("login") ? "active" : "" %>" href="/login">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+
             </a>
-            <a  class="<%= request.getRequestURI().endsWith("cart") ? "active" : "" %> " href="/cart">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>    </a>
+
+            <div class="relative">
+                <a  class="relative  <%= request.getRequestURI().endsWith("cart") ? "active" : "" %> " href="/cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>    </a>
+
+                <%if (session.getAttribute("numOfCartItems") != null) {%>
+                    <p class="absolute right-0 flex justify-center items-center text-sm text-white w-[20px] h-[20px] rounded-full z-10 bg-blue-500"><%=session.getAttribute("numOfCartItems")%></p>
+                <%}%>
+            </div>
 
         </div>
 

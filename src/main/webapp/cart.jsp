@@ -26,7 +26,7 @@
     <div class="p-4 flex-1 overflow-scroll">
 
     <%
-      Object data = request.getAttribute("cart");
+      Object data = session.getAttribute("cart");
       if (data !=null) {
         ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) data;
         for (ProductDTO product : products) {
