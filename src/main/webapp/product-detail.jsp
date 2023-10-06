@@ -43,7 +43,7 @@
                                         <%= product.getQuantity()%>
                                     </span>
                                     <span class="text-xs">Pieces Avalibal in Stock</span>
-                                    <span class="w-[10px] h-[10px] inline-block bg-green-400 rounded-full"></span>
+                                    <span class="w-[10px] h-[10px] inline-block bg-blue-500 rounded-full"></span>
                                 </div>
 
 

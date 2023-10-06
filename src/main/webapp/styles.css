@@ -1,6 +1,7 @@
 body{
     font-family: 'San Francisco', Arial, sans-serif;
 }
+
 .layout-container{
     max-width: 1200px;
     margin: auto;
@@ -54,6 +55,8 @@ body{
     height: 50vh;
 }
 .button1 {
+    background-color: #333333 !important;
+
     display: inline-block;
     cursor: pointer;
     border: none;
@@ -70,7 +73,6 @@ body{
     text-decoration: none;
     text-align: center;
     color: white;
-    background-color: #333333;
 }
 .button2 {
     display: inline-block;
@@ -103,10 +105,8 @@ body{
     margin-right: 30%;
     margin-left: 30%;
     align-items: center;
-    /*background-color: green;*/
 }
 .form{
-    /*align-items: center;*/
     padding: 10px;
 }
 .product-form-container{
@@ -119,11 +119,8 @@ body{
 .product-form{
     display: flex;
     flex-direction: row;
-    gap: 10px;
 }
-/*.input{*/
-/*    !*margin-bottom: 10px;*!*/
-/*}*/
+
 
 .coolinput {
     display: flex;
@@ -131,6 +128,9 @@ body{
     min-height: 100px;
     min-width: 330px;
 
+}
+.input{
+    padding: 10px;
 }
 .coolinput label.text {
     font-size: 0.75rem;
@@ -142,7 +142,6 @@ body{
 .coolinput .input {
     width: 100%;
     min-height: 50px;
-    padding: 14px 12px;
     font-size: 0.75rem;
     border: 2px #9db3f6 solid;
     border-radius: 5px;
@@ -163,15 +162,9 @@ body{
     object-fit: cover;
     margin-right: 10px;
     margin-bottom: 10px;
+    box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+
 }
-/*.product-text {*/
-/*    position: absolute;*/
-/*    top: 20px;*/
-/*    left: 20px;*/
-/*    padding: 10px;*/
-/*    border-radius: 5px;*/
-/*    color: grey;*/
-/*}*/
 .product-item {
     position: relative;
     display: inline-block;
@@ -182,19 +175,14 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
-    /*background-color: rgba(255, 255, 255, 0.8);*/
     color: white;
 }
-
-/*.product-image {*/
-/*    border-radius: 20px;*/
-/*    width: 200px;*/
-/*    height: 200px;*/
-/*    object-fit: cover;*/
-/*}*/
-
+.product-text2 {
+    padding: 10px;
+    color: #333333;
+}
 .drop-container {
     background-color: white;
     position: relative;
@@ -203,7 +191,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 226.7px;
     padding: 20px;
     border-radius: 5px;
     border: 2px;
@@ -211,20 +199,16 @@ body{
     color: #444;
     cursor: pointer;
     transition: background .2s ease-in-out, border .2s ease-in-out;
-    width: 255px;
-}
-.test{
-    color: green;
+    width: 297px;
+    margin-right: 10px;
 }
 .drop-container:hover {
     background: #ffffff;
     border-color: #9db3f6;
 }
-
 .drop-container:hover .drop-title {
     color: #9db3f6;
 }
-
 .drop-title {
     color: #9db3f6;
     font-size: 20px;
@@ -237,5 +221,7 @@ body{
 }
 .parent{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
