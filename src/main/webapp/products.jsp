@@ -20,152 +20,50 @@
                                     köpa dina favoritprodukter.</span>
                             </h2>
                         </div>
-                        <%-- <div class="products-container">--%>
-                            <%-- <%--%>
-                                <%-- Object data=request.getAttribute("products");--%>
-                                    <%-- if (data !=null) {--%>
-                                        <%-- ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) data;--%>
-                                                <%-- for (ProductDTO product : products) {--%>
-                                                    <%-- %>--%>
-                                                        <%--&lt;%&ndash; <a
-                                                            href="product-detail?id=<%=product.getId()%>">&ndash;%&gt;--%>
-
-                                                            <%-- <img class="product-image"
-                                                                src="data:image/jpg;base64,<%=product.getBase64Image()%>">--%>
-                                                                <%-- <div class="product-text">--%>
-                                                                    <%-- <p>
-                                                                        <%=product.getName()%>
-                                                                            </p>--%>
-                                                                            <%-- <p>Från <%= new
-                                                                                    DecimalFormat("0").format(product.getPrice())
-                                                                                    %> kr</p>--%>
-                                                                                    <%-- </div>--%>
-                                                                                        <%-- </a>--%>
-                                                                                            <%-- <%--%>
-                                                                                                <%-- }--%>
-                                                                                                    <%-- }--%>
-                                                                                                        <%-- %>--%>
-
-
-                                                                                                            <%-- </div>--%>
-                                                                                                                <%-- <div
-                                                                                                                    class="products-container">--%>
-                                                                                                                    <%--
-                                                                                                                        <%--%>
-                                                                                                                        <%-- Object
-                                                                                                                            data=request.getAttribute("products");--%>
-                                                                                                                            <%-- if
-                                                                                                                                (data
-                                                                                                                                !=null)
-                                                                                                                                {--%>
-                                                                                                                                <%--
-                                                                                                                                    ArrayList<ProductDTO>
-                                                                                                                                    products
-                                                                                                                                    =
-                                                                                                                                    (ArrayList
-                                                                                                                                    <ProductDTO>
-                                                                                                                                        )
-                                                                                                                                        data;--%>
-                                                                                                                                        <%-- for
-                                                                                                                                            (ProductDTO
-                                                                                                                                            product
-                                                                                                                                            :
-                                                                                                                                            products)
-                                                                                                                                            {--%>
-                                                                                                                                            <%--
-                                                                                                                                                %>--%>
-                                                                                                                                                <%-- <div
-                                                                                                                                                    class="product-item">--%>
-                                                                                                                                                    <%-- <a
-                                                                                                                                                        href="product-detail?id=<%=product.getId()%>">--%>
-                                                                                                                                                        <%-- <div
-                                                                                                                                                            class="product-text">--%>
-                                                                                                                                                            <%--
-                                                                                                                                                                <p>
-                                                                                                                                                                <%=product.getName()%>
-                                                                                                                                                                    </p>
-                                                                                                                                                                    --%>
-                                                                                                                                                                    <%--
-                                                                                                                                                                        <p>Från
-                                                                                                                                                                        <%= new
-                                                                                                                                                                            DecimalFormat("0").format(product.getPrice())
-                                                                                                                                                                            %>
-                                                                                                                                                                            kr
-                                                                                                                                                                            </p>
-                                                                                                                                                                            --%>
-                                                                                                                                                                            <%--
-                                                                                                                                                                                </div>--%>
-                                                                                                                                                                                <%-- <img
-                                                                                                                                                                                    class="product-image"
-                                                                                                                                                                                    src="data:image/jpg;base64,<%=product.getBase64Image()%>">--%>
-                                                                                                                                                                                    <%--
-                                                                                                                                                                                        </a>--%>
-                                                                                                                                                                                        <%--
-                                                                                                                                                                                            </div>--%>
-                                                                                                                                                                                            <%--
-                                                                                                                                                                                                <%--%>
-                                                                                                                                                                                                <%--
-                                                                                                                                                                                                    }--%>
-                                                                                                                                                                                                    <%--
-                                                                                                                                                                                                        }--%>
-                                                                                                                                                                                                        <%--
-                                                                                                                                                                                                            %>--%>
-                                                                                                                                                                                                            <%--
-                                                                                                                                                                                                                </div>--%>
-                                                                                                                                                                                                                <div
-                                                                                                                                                                                                                    class="flex flex-row ">
-                                                                                                                                                                                                                    <% Object
-                                                                                                                                                                                                                        data=request.getAttribute("products");
-                                                                                                                                                                                                                        if
-                                                                                                                                                                                                                        (data
-                                                                                                                                                                                                                        !=null)
-                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                        ArrayList<ProductDTO>
-                                                                                                                                                                                                                        products
-                                                                                                                                                                                                                        =
-                                                                                                                                                                                                                        (ArrayList
-                                                                                                                                                                                                                        <ProductDTO>
-                                                                                                                                                                                                                            )
-                                                                                                                                                                                                                            data;
-                                                                                                                                                                                                                            for
-                                                                                                                                                                                                                            (int
-                                                                                                                                                                                                                            i
-                                                                                                                                                                                                                            =
-                                                                                                                                                                                                                            0;
-                                                                                                                                                                                                                            i
-                                                                                                                                                                                                                            < products.size();
-                                                                                                                                                                                                                                i++)
-                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                ProductDTO
-                                                                                                                                                                                                                                product=products.get(i);
-                                                                                                                                                                                                                                %>
-                                                                                                                                                                                                                                <div
-                                                                                                                                                                                                                                    class="product-item">
-                                                                                                                                                                                                                                    <a
-                                                                                                                                                                                                                                        href="product-detail?id=<%=product.getId()%>">
-                                                                                                                                                                                                                                        <img class="product-image"
-                                                                                                                                                                                                                                            src="data:image/jpg;base64,<%=product.getBase64Image()%>"
-                                                                                                                                                                                                                                            onload="setTextColor(this, <%= i %>);">
-                                                                                                                                                                                                                                        <!-- Pass index for each image -->
-                                                                                                                                                                                                                                        <span
-                                                                                                                                                                                                                                            class="product-text"
-                                                                                                                                                                                                                                            id="productText<%= i %>">
-                                                                                                                                                                                                                                            <!-- Unique ID for each product text -->
-                                                                                                                                                                                                                                            <p>
-                                                                                                                                                                                                                                                <%=product.getName()%>
-                                                                                                                                                                                                                                            </p>
-                                                                                                                                                                                                                                            <p>Från
-                                                                                                                                                                                                                                                <%= new
-                                                                                                                                                                                                                                                    DecimalFormat("0").format(product.getPrice())
-                                                                                                                                                                                                                                                    %>
-                                                                                                                                                                                                                                                    kr
-                                                                                                                                                                                                                                            </p>
-                                                                                                                                                                                                                                        </span>
-                                                                                                                                                                                                                                    </a>
-                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                <% } }
-                                                                                                                                                                                                                                    %>
-                                                                                                                                                                                                                </div>
+                                                                                                                                                        </div>--%>
+            <div
+            class="flex flex-row ">
+            <% Object data=request.getAttribute("products");
+            if (data !=null) {ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) data;
+            for
+            (int
+            i
+            =
+            0;
+            i
+            < products.size();
+            i++)
+            {
+            ProductDTO
+            product=products.get(i);
+            %>
+            <div
+            class="product-item">
+            <a
+            href="product-detail?id=<%=product.getId()%>">
+            <img class="product-image"
+            src="data:image/jpg;base64,<%=product.getBase64Image()%>"
+            onload="setTextColor(this, <%= i %>);">
+            <!-- Pass index for each image -->
+            <span
+            class="product-text"
+            id="productText<%= i %>">
+            <!-- Unique ID for each product text -->
+            <p>
+            <%=product.getName()%>
+            </p>
+            <p>Från
+            <%= new
+                DecimalFormat("0").format(product.getPrice())
+                %>
+                kr
+            </p>
+            </span>
+            </a>
+            </div>
+            <% } }
+            %>
+            </div>
                     </div>
 
                     <script>

@@ -3,6 +3,7 @@ package com.example.distlab1.UI.Controllers;
 import com.example.distlab1.BO.Handlers.ProductHandler;
 import com.example.distlab1.DB.DatabaseException;
 import com.example.distlab1.DB.ItemDB.UserDB;
+import com.example.distlab1.UI.DTOs.ProductDTO;
 import com.example.distlab1.UI.Error.UIErrorHandler;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -15,9 +16,10 @@ import jakarta.servlet.http.Part;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 
-@WebServlet({"/admin/add-product", "/admin/edit-product"})
+@WebServlet({"/admin/add-product", "/admin/edit-product","/admin/handle-products"})
 @MultipartConfig
 public class ManageProductServlet extends HttpServlet {
 
@@ -29,16 +31,17 @@ public class ManageProductServlet extends HttpServlet {
             case "/admin/add-product":
                 req.getRequestDispatcher("/product-form.jsp").forward(req, res);
                 break;
-            case "/admin/edit-product":
-                editProduct(req, res);
+            case "/admin/handle-products":
+                handleShowProduct(req, res);
                 break;
             default:
-                req.getRequestDispatcher("/").forward(req,res);
         }
 
 
 
     }
+
+
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
         String action = req.getServletPath();
@@ -56,39 +59,18 @@ public class ManageProductServlet extends HttpServlet {
 
 
     }
-//    public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-//        // Get user inputs
-//        String name = req.getParameter("name");
-//        String description = req.getParameter("description");
-//
-//        // Handle empty or null values for price and quantity
-//        int price = 0;
-//        int quantity = 0;
-//        String priceParam = req.getParameter("price");
-//        String quantityParam = req.getParameter("quantity");
-//
-//        if (priceParam != null && !priceParam.isEmpty()) {
-//            price = Integer.parseInt(priceParam);
-//        }
-//
-//        if (quantityParam != null && !quantityParam.isEmpty()) {
-//            quantity = Integer.parseInt(quantityParam);
-//        }
-//
-//        // Get upload image.
-//        Part part = req.getPart("image");
-//        InputStream inputStream = part.getInputStream();
-//
-//        try {
-//            // Create product
-//            ProductHandler.addProduct(name, description, price, quantity, inputStream);
-//            res.sendRedirect("/products");
-//
-//        } catch (DatabaseException e) {
-//            UIErrorHandler.handleDatabaseException(req, res, e);
-//        }
-//    }
 
+    private void handleShowProduct(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
+    {
+        try {
+            ArrayList<ProductDTO> products = ProductHandler.getProducts();
+            req.setAttribute("products-to-handle", products);
+            req.getRequestDispatcher("/handle-products.jsp").forward(req,res);
+        }catch (DatabaseException e){
+            UIErrorHandler.handleDatabaseException(req, res,e);
+        }
+
+    }
 
     private void addProduct(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
         // Get user inputs

@@ -18,8 +18,7 @@ import java.util.ArrayList;
 @WebServlet({"/products", "/product-detail"})
 public class ProductServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String action = req.getRequestURI();
 
         switch (action){
@@ -35,6 +34,9 @@ public class ProductServlet extends HttpServlet {
         }
 
     }
+
+
+
 
 
 

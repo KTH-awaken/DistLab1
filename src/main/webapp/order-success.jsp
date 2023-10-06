@@ -1,3 +1,6 @@
+<%@ page import="com.example.distlab1.UI.DTOs.ProductDTO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.text.DecimalFormat" %>
 <html>
 
 <head>

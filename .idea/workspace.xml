@@ -10,12 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e617d3d9-fb8d-4f5b-9748-ad798dd2baff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AuthenticatedFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AuthenticatedFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/handle-products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/UnauthenticatedFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/UnauthenticatedFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/WarehouseAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/WarehouseAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/AccountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/ManageProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/ManageProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/access-denied.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/access-denied.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/order-success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/order-success.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
