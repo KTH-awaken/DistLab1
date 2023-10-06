@@ -1,5 +1,6 @@
 <%@ page import="java.util.ArrayList" %>
-    <%@ page import="com.example.distlab1.UI.DTOs.ProductDTO" %><%-- Created by IntelliJ IDEA. User: Marcus Date:
+    <%@ page import="com.example.distlab1.UI.DTOs.ProductDTO" %>
+<%@ page import="com.example.distlab1.UI.DTOs.UserDTO" %><%-- Created by IntelliJ IDEA. User: Marcus Date:
             2023-10-02 Time: 18:40 To change this template use File | Settings | File Templates. --%>
             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
                 <html>
@@ -30,8 +31,16 @@
                                     href="/">Hem</a>
                                 <a class="<%= request.getRequestURI().endsWith(" products") ? "active" : "" %>"
                                     href="/products">Produkter</a>
+
+<%--                                Admin Access--%>
+                                <% UserDTO user = (UserDTO)session.getAttribute("user");%>
+                                <%if(user != null){%>
+                                <%if (user.getRole().compareTo("admin") == 0) {%>
                                 <a class="<%= request.getRequestURI().endsWith(" admin/add-product") ? "active" : "" %>"
                                     href="/admin/add-product">Lägg till produkt</a>
+                                <%}%>
+                                <%}%>
+
 
                             </div>
 

@@ -13,7 +13,7 @@
             </head>
 
             <body class="page">
-                <jsp:include page="navbar.jsp"></jsp:include>
+            <jsp:include page="navbar.jsp"></jsp:include>
 
                 <div class="layout-container">
                     <div class="welcome-text">
