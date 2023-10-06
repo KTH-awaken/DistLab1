@@ -72,17 +72,16 @@ public class UserDB {
     }
 
     public boolean addUser(String username, String email, String password) throws DatabaseException {
-        boolean success = false;
 
         // Check if the user exists
         if (userExists(email)) {
             return false;
         }
-
+        // Acquire connection
+        DBManager db = DBManager.getInstance();
+        Connection conn  = db.getConnection();
         try {
-            DBManager db = DBManager.getInstance();
-            // Acquire connection
-            Connection conn  = db.getConnection();
+
 
             // Start transaction
             db.startTransaction(conn);
@@ -95,20 +94,20 @@ public class UserDB {
             userStatement.setString(3, password);
 
             int result = userStatement.executeUpdate();
-            if (result > 0) {
-                // Commit transaction
-                success = true;
-                db.commitTransaction(conn);
+            if(result <= 0){
+                db.rollbackTransaction(conn);
+                throw new DatabaseException("Failed to add user");
             }
-
-            // Release connection
+            // Commit and Release connection
+            db.commitTransaction(conn);
             db.releaseConnection(conn);
+            return true;
 
         } catch (SQLException e) {
+            db.rollbackTransaction(conn);
             throw new DatabaseException(e.getMessage(), e);
         }
 
-        return success;
     }
 
     public User getUserByEmailAndPassword(String email, String password) throws DatabaseException {
@@ -142,13 +141,12 @@ public class UserDB {
         return user;
     }
 
-    public boolean updateUserById(int id, User updated) throws DatabaseException {
-        boolean success = false;
-
+    public void updateUserById(int id, User updated) throws DatabaseException {
+        // Acquire connection
+        DBManager db = DBManager.getInstance();
+        Connection conn = db.getConnection();
         try {
-            DBManager db = DBManager.getInstance();
-            // Acquire connection
-            Connection conn = db.getConnection();
+
             String sql = "UPDATE t_users SET username = ?, email = ?, password = ?, role = ? WHERE id = ?";
 
             db.startTransaction(conn);
@@ -161,19 +159,20 @@ public class UserDB {
             preparedStatement.setInt(5, id);
 
             int result = preparedStatement.executeUpdate();
-            if (result > 0) {
-                success = true ;
-                db.commitTransaction(conn);
+            if(result <= 0){
+                db.rollbackTransaction(conn);
+                throw new DatabaseException("Failed to update user");
             }
 
 
-            // Release connection
+            // Commit and Release connection
+            db.commitTransaction(conn);
             db.releaseConnection(conn);
         } catch (SQLException e) {
+            db.rollbackTransaction(conn);
             throw new DatabaseException(e.getMessage(), e);
         }
 
-        return success;
     }
 
     private boolean userExists(String email) throws DatabaseException {

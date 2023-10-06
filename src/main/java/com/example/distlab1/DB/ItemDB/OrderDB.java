@@ -29,7 +29,9 @@ public class OrderDB {
             int orderResult = preparedStatement.executeUpdate();
 
             if (orderResult <= 0) {
+                db.rollbackTransaction(conn);
                 throw new DatabaseException("Failed to create the order. Try again");
+
             }
 
             try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
@@ -41,11 +43,13 @@ public class OrderDB {
                     db.commitTransaction(conn);
 
                 } else {
+                    db.rollbackTransaction(conn);
                     throw new SQLException("Failed to create the order. Try again");
                 }
             }
 
         }catch (SQLException e){
+            db.rollbackTransaction(conn);
             throw new DatabaseException(e.getMessage(), e);
         }
 

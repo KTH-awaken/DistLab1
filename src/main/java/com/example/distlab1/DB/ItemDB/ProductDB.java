@@ -74,15 +74,15 @@ public class ProductDB {
         return product;
     }
 
-    public boolean insertProduct(String name, String description, double price, int quantity, InputStream image) throws DatabaseException {
+    public void insertProduct(String name, String description, double price, int quantity, InputStream image) throws DatabaseException {
 
 
-        boolean success= false;
+        DBManager db = DBManager.getInstance();
+        Connection conn = db.getConnection();
 
         try{
             // Acquire connection
-            DBManager db = DBManager.getInstance();
-            Connection conn = db.getConnection();
+
             String t_product_sql = "insert into t_products (name, description, quantity, price, image) values (?, ?, ?, ?, ?)";
 
             // Start transaction
@@ -96,18 +96,21 @@ public class ProductDB {
             preparedStatement.setDouble(4, price);
             preparedStatement.setBlob(5, image);
             int result = preparedStatement.executeUpdate();
-            if(result > 0){
-                success = true;
-                db.commitTransaction(conn);
+
+            if(result <= 0){
+                db.rollbackTransaction(conn);
+                throw new DatabaseException("Failed to add product");
+
             }
 
-            // Release connection
+            db.commitTransaction(conn);
             db.releaseConnection(conn);
+
         } catch (SQLException e) {
+            db.rollbackTransaction(conn);
             throw new DatabaseException(e.getMessage(),e);
         }
 
-        return success;
     }
 
     public boolean updateProduct(int id, String newName, String newDescription, double newPrice, int newQuantity, InputStream newImage) throws DatabaseException {
@@ -147,13 +150,13 @@ public class ProductDB {
 
         return success;
     }
-    public boolean deleteProduct(int id) throws DatabaseException {
-        boolean success = false;
+    public void deleteProduct(int id) throws DatabaseException {
+        // Acquire connection
+        DBManager db = DBManager.getInstance();
+        Connection conn = db.getConnection();
 
         try {
-            // Acquire connection
-            DBManager db = DBManager.getInstance();
-            Connection conn = db.getConnection();
+
 
             // Start transaction
             db.startTransaction(conn);
@@ -165,18 +168,19 @@ public class ProductDB {
 
             int result = preparedStatement.executeUpdate();
 
-            if (result > 0) {
-                success = true;
-                db.commitTransaction(conn);
+            if(result <= 0){
+                db.rollbackTransaction(conn);
+                throw new DatabaseException("Failed to delete product");
             }
+            db.commitTransaction(conn);
 
             // Release connection
             db.releaseConnection(conn);
         } catch (SQLException e) {
+            db.rollbackTransaction(conn);
             throw new DatabaseException(e.getMessage(), e);
         }
 
-        return success;
     }
 
 

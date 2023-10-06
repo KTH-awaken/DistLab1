@@ -95,6 +95,16 @@ public class DBManager {
             throw new DatabaseException(e.getMessage(), e);
         }
     }
+    public void rollbackTransaction(Connection connection) throws DatabaseException {
+        try {
+            connection.rollback();
+            connection.setAutoCommit(true);
+        } catch (SQLException e) {
+            throw new DatabaseException(e.getMessage(), e);
+        }
+    }
+
+
 
     private DBManager() {
         // TODO: add database security if possible
