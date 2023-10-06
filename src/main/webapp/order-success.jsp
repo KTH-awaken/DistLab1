@@ -1,7 +1,7 @@
 <%@ page import="com.example.distlab1.UI.DTOs.ProductDTO" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.text.DecimalFormat" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 
 <head>
     <title>Success</title>
