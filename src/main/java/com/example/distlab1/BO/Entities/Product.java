@@ -4,7 +4,7 @@ public class Product {
 
     private  String name;
     private  String description;
-        private  int quantity;
+    private  int quantity;
     private  double price;
     private  Integer id;
     private String base64Image;

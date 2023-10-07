@@ -49,9 +49,6 @@ public class DBManager {
 
         return connection;
     }
-
-
-
     /**
      * Thread safe method
      * @param connection the connection to be released
@@ -63,8 +60,6 @@ public class DBManager {
 
 
     }
-
-
     /**
      * Close all connection of database connection pool
      * @throws DatabaseException
@@ -78,8 +73,6 @@ public class DBManager {
             }
         }
     }
-
-
     public void startTransaction(Connection connection) throws DatabaseException {
         try {
             connection.setAutoCommit(false);
@@ -103,9 +96,6 @@ public class DBManager {
             throw new DatabaseException(e.getMessage(), e);
         }
     }
-
-
-
     private DBManager() {
         // TODO: add database security if possible
         this.user = "root";

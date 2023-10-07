@@ -1,5 +1,6 @@
 package com.example.distlab1.DB.ItemDB;
 
+import com.example.distlab1.BO.Entities.Order;
 import com.example.distlab1.DB.DBManager;
 import com.example.distlab1.DB.DatabaseException;
 
@@ -10,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class OrderDB {
+
 
     protected OrderDB(){}
 
@@ -73,5 +75,30 @@ public class OrderDB {
                 throw new SQLException("Failed to insert a product into the order");
             }
         }
+    }
+    public static ArrayList<Order> getOrders(){
+        ArrayList<Order> orders = new ArrayList<>();
+        String sql = "SELECT * FROM t_orders";
+        try {
+            Connection conn = DBManager.getInstance().getConnection();
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Order order = new Order();
+                order.setId(resultSet.getInt("user_id"));
+                order.setFulfilled(resultSet.getBoolean("fullfilled"));
+
+                orders.add(order);
+            }
+            DBManager.getInstance().releaseConnection(conn);//todo kolla om det är smart
+        } catch (DatabaseException e) {
+            throw new RuntimeException(e+"Knas i get orders ");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return orders;
+    }
+    public static void packOrder(Connection con){
+//todo remove
     }
 }

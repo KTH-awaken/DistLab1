@@ -1,6 +1,8 @@
 package com.example.distlab1.BO.Handlers;
 
+import com.example.distlab1.BO.Entities.Order;
 import com.example.distlab1.DB.DatabaseException;
+import com.example.distlab1.UI.DTOs.OrderDTO;
 import com.example.distlab1.UI.DTOs.ProductDTO;
 
 import java.util.ArrayList;
@@ -17,5 +19,33 @@ public class OrderHandler {
 
     static private ArrayList<Integer> mapProductIds(ArrayList<ProductDTO> products){
         return products.stream().map(ProductDTO::getId).collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    static public void packOrder(int userId, OrderDTO orderDTO){
+        //todo här packar vi sedan den valda unfuild order i listan
+        orderDTO.setFulfilled(true);//seter fulfied till ture
+        DBContext db = new DBContext();
+        System.out.println(orderDTO);
+        System.out.println("ORDER DTO TEST^^");
+        db.order();
+    }
+
+    static public ArrayList<OrderDTO> getOrders(){
+        DBContext db = new DBContext();
+        ArrayList<OrderDTO> ordersToReturn= new ArrayList<>();
+        ArrayList<Order> orders = db.order().getOrders();
+
+        for (Order o:orders) {
+            ordersToReturn.add(mapOrder(o));
+        }
+        return ordersToReturn;
+    }
+
+    private static OrderDTO mapOrder(Order o){
+        OrderDTO orderToReturn = new OrderDTO();
+        orderToReturn.setId(o.getId());
+        orderToReturn.setUserId(o.getUserId());
+        orderToReturn.setFulfilled(o.isFulfilled());
+        return orderToReturn;
     }
 }

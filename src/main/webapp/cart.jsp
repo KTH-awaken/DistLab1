@@ -22,16 +22,13 @@
 
                         <div class="flex flex-col h-screen py-4">
                             <h1 class="font-bold text-3xl mb-4">My Cart</h1>
-                            <div class="p-4 flex-1 overflow-scroll">
+                            <div class="p-4 flex-1 overflow-scroll" style="max-height: 80%">
 
                                 <% Object data=session.getAttribute("cart"); if (data !=null) { ArrayList<ProductDTO>
                                     products =
                                     (ArrayList<ProductDTO>) data;
                                         for (ProductDTO product : products) {
                                         %>
-
-
-
                                         <div class="border-b-[0.5px] border-black  flex gap-4 pb-3 mb-2">
                                             <img class="w-24 h-24 object-cover rounded-md"
                                                 src="data:image/jpg;base64,<%=product.getBase64Image()%>"

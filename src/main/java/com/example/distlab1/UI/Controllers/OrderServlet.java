@@ -20,8 +20,6 @@ public class OrderServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-
-
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -34,15 +32,12 @@ public class OrderServlet extends HttpServlet {
             default:
                 break;
         }
-
-
     }
 
     private void placeOrder(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
         HttpSession session = req.getSession();
         UserDTO user = (UserDTO)session.getAttribute("user");
         ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) session.getAttribute("cart");
-        //todo här fin listan av produket som ska sammanfatas vid slutet av en sucseful order
         System.out.println("User: "+ user);
         System.out.println("Products: " + products);
         int id = user.getId();

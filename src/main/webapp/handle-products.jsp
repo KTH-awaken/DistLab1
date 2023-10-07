@@ -16,14 +16,11 @@
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="page">
     <jsp:include page="navbar.jsp"></jsp:include>
 
     <% Object data=request.getAttribute("products-to-handle");
     ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) data;%>
-
-
-
 
       <div class="layout-container">
             <h1 class="mb-8 text-2xl font-bold">Handle products</h1>
@@ -32,9 +29,9 @@
           <% for (ProductDTO product:products) {%>
 
           <div class="flex px-6 py-4 bg-[#f9f9f9] gap-4 rounded-md">
-              <img class="w-24 h-24 rounded-full object-cover"
+              <img class="w-24 h-24  object-cover"
                    src="data:image/jpg;base64,<%=product.getBase64Image()%>"
-                   alt="" />
+                   alt="" style="border-radius: 20px"/>
 
               <div class="flex-1 mt-2">
                   <h1><%=product.getName()%></h1>

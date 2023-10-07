@@ -183,11 +183,6 @@ public class ProductDB {
 
     }
 
-
-
-
-
-
     private String getBase64Image(Blob blob) throws SQLException, IOException {
         InputStream inputStream = blob.getBinaryStream();
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
