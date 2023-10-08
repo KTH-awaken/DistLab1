@@ -220,3 +220,13 @@ body{
     justify-content: center;
     align-items: center;
 }
+.orders-to-pack{
+    color: #333333;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 700px;
+    margin-bottom: 20px;
+    min-height: 41px;
+}

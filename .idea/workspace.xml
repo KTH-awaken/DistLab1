@@ -10,28 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e617d3d9-fb8d-4f5b-9748-ad798dd2baff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/packServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Entities/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/OrderHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/BO/Handlers/OrderHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/DBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/OrderDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/OrderDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/DB/ItemDB/ProductDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AdminAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AuthenticatedFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/AuthenticatedFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/UnauthenticatedFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/UnauthenticatedFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/WarehouseAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/Filters/WarehouseAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/OrderServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/OrderSuccsessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/OrderSuccsessServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/DTOs/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/packServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/distlab1/UI/Controllers/packServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/handle-products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/handle-products.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/navbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/order-success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/order-success.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pack.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pack.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +45,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2WL9VMED8GzOuX98HKxziUKIOR4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

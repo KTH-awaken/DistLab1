@@ -29,9 +29,9 @@ public class OrderSuccsessServlet extends HttpServlet {
         ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) session.getAttribute("cart");
         req.setAttribute("order-products",products);
         req.getRequestDispatcher("order-success.jsp").forward(req,res);
-        //todo här mapar jag om products till en order sen aropar jag pack servlert
-        OrderDTO orderDTO = new OrderDTO();
-        orderDTO.setUserId(user.getId());
+//        //todo här mapar jag om products till en order sen aropar jag pack servlert
+//        OrderDTO orderDTO = new OrderDTO();
+//        orderDTO.setUserId(user.getId());
 
 
     }

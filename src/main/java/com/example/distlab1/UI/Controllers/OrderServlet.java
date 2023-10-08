@@ -38,8 +38,7 @@ public class OrderServlet extends HttpServlet {
         HttpSession session = req.getSession();
         UserDTO user = (UserDTO)session.getAttribute("user");
         ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) session.getAttribute("cart");
-        System.out.println("User: "+ user);
-        System.out.println("Products: " + products);
+
         int id = user.getId();
         try {
             OrderHandler.placeOrder(id, products);

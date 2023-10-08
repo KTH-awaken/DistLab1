@@ -85,7 +85,8 @@ public class OrderDB {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Order order = new Order();
-                order.setId(resultSet.getInt("user_id"));
+                order.setId(resultSet.getInt("id"));
+                order.setUserId(resultSet.getInt("user_id"));
                 order.setFulfilled(resultSet.getBoolean("fullfilled"));
 
                 orders.add(order);
@@ -98,7 +99,24 @@ public class OrderDB {
         }
         return orders;
     }
-    public static void packOrder(Connection con){
-//todo remove
+    public static void packOrder(int id) throws DatabaseException {
+        String sql = "UPDATE t_orders SET fullfilled = ? WHERE id = ?";
+        try {
+            Connection conn = DBManager.getInstance().getConnection();
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setBoolean(1, true);
+            preparedStatement.setInt(2, id);
+
+            int rowsUpdated = preparedStatement.executeUpdate();
+
+            if (rowsUpdated == 0) {
+                throw new DatabaseException("Failed to pack order with ID: " + id);
+            }
+
+            DBManager.getInstance().releaseConnection(conn);
+        } catch (SQLException e) {
+            throw new DatabaseException("Error packing order with ID: " + id, e);
+        }
     }
+
 }

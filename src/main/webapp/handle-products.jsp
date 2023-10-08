@@ -22,6 +22,9 @@
     <% Object data=request.getAttribute("products-to-handle");
     ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) data;%>
 
+
+
+
       <div class="layout-container">
             <h1 class="mb-8 text-2xl font-bold">Handle products</h1>
 

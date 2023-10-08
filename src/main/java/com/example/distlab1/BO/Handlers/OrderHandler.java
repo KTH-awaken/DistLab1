@@ -13,7 +13,6 @@ public class OrderHandler {
     static public void placeOrder(int userid, ArrayList<ProductDTO> products) throws DatabaseException {
         DBContext db = new DBContext();
         ArrayList<Integer> ids = mapProductIds(products);
-        System.out.println(userid + " " +  ids);
         db.order().insertOrder(userid, ids);
     }
 
@@ -21,13 +20,16 @@ public class OrderHandler {
         return products.stream().map(ProductDTO::getId).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    static public void packOrder(int userId, OrderDTO orderDTO){
+    static public void packOrder(int id) throws DatabaseException {
         //todo här packar vi sedan den valda unfuild order i listan
-        orderDTO.setFulfilled(true);//seter fulfied till ture
         DBContext db = new DBContext();
-        System.out.println(orderDTO);
-        System.out.println("ORDER DTO TEST^^");
-        db.order();
+        db.order().packOrder(id);
+
+//        orderDTO.setFulfilled(true);//seter fulfied till ture
+//        DBContext db = new DBContext();
+//        System.out.println(orderDTO);
+//        System.out.println("ORDER DTO TEST^^");
+//        db.order();
     }
 
     static public ArrayList<OrderDTO> getOrders(){
