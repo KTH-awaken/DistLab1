@@ -56,14 +56,9 @@
                                 <%if(user != null){%>
                                 <%if (user.getRole().compareTo("warehouse") == 0) {%>
                                 <a class="<%= request.getRequestURI().endsWith(" warehouse/handle-order") ? "active" : "" %>"
-                                   href="/pack.jsp">Hantera beställningar</a>
+                                   href="/pack">Hantera beställningar</a>
                                 <%}%>
                                 <%}%>
-
-<%--                                <form action="/pack" method="get">--%>
-<%--                                    <button type="submit">Show Orders</button>--%>
-<%--                                </form>--%>
-
 
                             </div>
 

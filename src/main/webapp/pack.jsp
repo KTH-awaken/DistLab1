@@ -13,26 +13,14 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 
 <div class="parent">
-    <h1 style="font-size: 30px; margin-top: 100px">Orders to Pack</h1>
+    <h1 style="font-size: 30px; margin-top: 100px;margin-bottom: 80px">Orders to Pack</h1>
     <br>
 
     <!-- Form to show orders -->
-    <form action="/pack" method="get">
-        <button type="submit" class="button1"style="margin-bottom: 80px">Show Orders</button>
-    </form>
+<%--    <form action="/pack" method="get">--%>
+<%--        <button type="submit" class="button1"style="margin-bottom: 80px">Show Orders</button>--%>
+<%--    </form>--%>
 
-<%--    <div>--%>
-<%--        <%--%>
-<%--            Object data = request.getAttribute("orders");--%>
-<%--            if (data != null) {--%>
-<%--                ArrayList<OrderDTO> orders = (ArrayList<OrderDTO>) data;--%>
-<%--                for (OrderDTO order : orders) {--%>
-<%--        %>--%>
-<%--        <div class="product-text2">--%>
-<%--            Order ID: <%= order.getId() %> | User ID: <%= order.getUserId() %> | Fulfillment status <%= order.isFulfilled() %>--%>
-<%--        </div>--%>
-<%--        <% } } %>--%>
-<%--    </div>--%>
     <div>
         <%
             Object data = request.getAttribute("orders");
