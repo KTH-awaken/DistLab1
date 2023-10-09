@@ -42,7 +42,7 @@
                   <p><%=product.getPrice()%></p>
               </div>
               <div class="flex items-center gap-8">
-                      <a href="/product-detail?id=<%=product.getId()%>">
+                      <a  href="/product-detail?id=<%=product.getId()%>">
                           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
                               <path
                                       d="M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
@@ -58,13 +58,12 @@
                           </svg>
                       </a>
 
-                  <form action="/admin/delete-product?id=<%=product.getId()%>" method="post">
-                      <button type="submit">
+                  <form class="m-0 p-0" action="/admin/delete-product?id=<%=product.getId()%>" method="post">
+                      <button class="m-0 p-0" type="submit">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                               <g>
                                   <path fill="none" d="M0 0h24v24H0z"></path>
-                                  <path
-                                          d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zM9 4v2h6V4H9z"></path>
+                                  <path d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zM9 4v2h6V4H9z"></path>
                               </g>
                           </svg>
                       </button>
