@@ -99,7 +99,14 @@ public class OrderDB {
         }
         return orders;
     }
-    public static void packOrder(int id) throws DatabaseException {
+    public static void updateOrder(int id,String action) throws DatabaseException {
+        switch (action){
+            case "pack":setFullFilled(id);
+            break;
+        }
+
+    }
+    private static void setFullFilled(int id) throws DatabaseException {
         String sql = "UPDATE t_orders SET fullfilled = ? WHERE id = ?";
         try {
             Connection conn = DBManager.getInstance().getConnection();
@@ -114,9 +121,8 @@ public class OrderDB {
             }
 
             DBManager.getInstance().releaseConnection(conn);
-        } catch (SQLException e) {
+        } catch (SQLException | DatabaseException e) {
             throw new DatabaseException("Error packing order with ID: " + id, e);
         }
     }
-
 }

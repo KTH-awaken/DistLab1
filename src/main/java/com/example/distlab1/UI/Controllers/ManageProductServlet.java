@@ -92,7 +92,7 @@ public class ManageProductServlet extends HttpServlet {
     }
 
     private void editProduct(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
-        System.out.println("editing product...");
+        System.out.println("editing product...");//todo 
     }
 
 }

@@ -154,7 +154,9 @@ body{
 .product-image{
     border-radius: 20px;
     width: 400px;
+    min-width: 400px;
     height: 500px;
+    min-height: 500px;
     object-fit: cover;
     margin-right: 10px;
     margin-bottom: 10px;

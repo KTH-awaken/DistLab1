@@ -23,13 +23,8 @@ public class OrderHandler {
     static public void packOrder(int id) throws DatabaseException {
         //todo här packar vi sedan den valda unfuild order i listan
         DBContext db = new DBContext();
-        db.order().packOrder(id);
+        db.order().updateOrder(id,"pack");
 
-//        orderDTO.setFulfilled(true);//seter fulfied till ture
-//        DBContext db = new DBContext();
-//        System.out.println(orderDTO);
-//        System.out.println("ORDER DTO TEST^^");
-//        db.order();
     }
 
     static public ArrayList<OrderDTO> getOrders(){

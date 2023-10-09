@@ -17,7 +17,7 @@
     <% Object data=request.getAttribute("product"); ProductDTO product=(ProductDTO) data; %>
         <div class="max-w-[1200px] h-screen  pt-[50px] px-2 m-auto">
             <div class="flex h-full justify-between ">
-                <img class="w-[49%] h-[60%]  object-cover rounded-3xl "
+                <img class="w-[49%] h-[75%]  object-cover rounded-3xl "
                     src="data:image/jpg;base64,<%=product.getBase64Image()%>" alt="" style="box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);">
                 <div
                     class="w-[49%] aspect-square flex flex-col justify-start gap-10 max-screen overflow-auto">
