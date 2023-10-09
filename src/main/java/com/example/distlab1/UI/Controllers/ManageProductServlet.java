@@ -20,7 +20,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 
-@WebServlet({"/admin/add-product", "/admin/edit-product","/admin/handle-products"})
+@WebServlet({"/admin/add-product", "/admin/edit-product","/admin/handle-products","/admin/delete-product"})
 @MultipartConfig
 public class ManageProductServlet extends HttpServlet {
 
@@ -56,6 +56,9 @@ public class ManageProductServlet extends HttpServlet {
                 break;
             case "/admin/edit-product":
                 editProduct(req, res);
+                break;
+            case "/admin/delete-product":
+                deleteProduct(req, res);
                 break;
             default:
                 req.getRequestDispatcher("/").forward(req,res);
@@ -123,6 +126,17 @@ public class ManageProductServlet extends HttpServlet {
 
         try {
             ProductHandler.updateProduct(id, newValue, inputStream);
+            res.sendRedirect("/admin/handle-products");
+        }catch (DatabaseException e){
+            UIErrorHandler.handleDatabaseException(req, res,e);
+        }
+    }
+
+    private void deleteProduct(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
+        int id = Integer.parseInt(req.getParameter("id"));
+
+        try {
+            ProductHandler.deleteProduct(id);
             res.sendRedirect("/admin/handle-products");
         }catch (DatabaseException e){
             UIErrorHandler.handleDatabaseException(req, res,e);

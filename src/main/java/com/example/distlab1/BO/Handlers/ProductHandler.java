@@ -44,7 +44,11 @@ public class ProductHandler {
                 image);
 
     }
+    static public void deleteProduct(int id) throws DatabaseException{
+        DBContext db = new DBContext();
+        db.product().deleteProduct(id);
 
+    }
 
     private static ProductDTO mapProduct(Product p){
         ProductDTO productToReturn = new ProductDTO();
