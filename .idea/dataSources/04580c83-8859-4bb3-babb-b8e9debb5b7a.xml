@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="webshop@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.49">
-    <root id="1">
-      <DefaultCasing>lower/lower</DefaultCasing>
-      <DefaultEngine>InnoDB</DefaultEngine>
-      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>webshop|schema||root|localhost|ALTER|G
-webshop|schema||root|localhost|ALTER ROUTINE|G
-webshop|schema||root|localhost|CREATE|G
-webshop|schema||root|localhost|CREATE ROUTINE|G
-webshop|schema||root|localhost|CREATE TEMPORARY TABLES|G
-webshop|schema||root|localhost|CREATE VIEW|G
-webshop|schema||root|localhost|DELETE|G
-webshop|schema||root|localhost|DROP|G
-webshop|schema||root|localhost|EVENT|G
-webshop|schema||root|localhost|EXECUTE|G
-webshop|schema||root|localhost|INDEX|G
-webshop|schema||root|localhost|INSERT|G
-webshop|schema||root|localhost|LOCK TABLES|G
-webshop|schema||root|localhost|REFERENCES|G
-webshop|schema||root|localhost|SELECT|G
-webshop|schema||root|localhost|SHOW VIEW|G
-webshop|schema||root|localhost|TRIGGER|G
-webshop|schema||root|localhost|UPDATE|G</Grants>
-      <ServerVersion>8.0.31</ServerVersion>
-    </root>
+    <root id="1"/>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
     </collation>
@@ -932,11 +909,6 @@ webshop|schema||root|localhost|UPDATE|G</Grants>
     </schema>
     <schema id="290" parent="1" name="webshop">
       <Current>1</Current>
-<<<<<<< HEAD
-=======
-      <IntrospectionTimestamp>2023-10-04.23:30:12</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-10-04.19:30:12</LocalIntrospectionTimestamp>
->>>>>>> devH1
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="291" parent="1" name="root">
@@ -1033,11 +1005,7 @@ product_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="311" parent="294" name="id">
-<<<<<<< HEAD
       <AutoIncrement>2</AutoIncrement>
-=======
-      <AutoIncrement>3</AutoIncrement>
->>>>>>> devH1
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

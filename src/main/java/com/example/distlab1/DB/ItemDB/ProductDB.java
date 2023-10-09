@@ -4,6 +4,8 @@ import com.example.distlab1.BO.Entities.Product;
 import com.example.distlab1.DB.DBManager;
 import com.example.distlab1.DB.DatabaseException;
 
+import javax.sql.rowset.serial.SerialBlob;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -196,5 +198,9 @@ public class ProductDB {
 
         return Base64.getEncoder().encodeToString(imageBytes);
     }
+
+
+
+
 
 }

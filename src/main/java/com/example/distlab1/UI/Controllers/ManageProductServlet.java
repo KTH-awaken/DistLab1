@@ -2,6 +2,7 @@ package com.example.distlab1.UI.Controllers;
 
 import com.example.distlab1.BO.Handlers.ProductHandler;
 import com.example.distlab1.DB.DatabaseException;
+import com.example.distlab1.DB.ItemDB.ProductDB;
 import com.example.distlab1.DB.ItemDB.UserDB;
 import com.example.distlab1.UI.DTOs.ProductDTO;
 import com.example.distlab1.UI.Error.UIErrorHandler;
@@ -33,6 +34,9 @@ public class ManageProductServlet extends HttpServlet {
                 break;
             case "/admin/handle-products":
                 handleShowProduct(req, res);
+                break;
+            case "/admin/edit-product":
+                handleShowEditPanel(req, res);
                 break;
             default:
         }
@@ -91,8 +95,38 @@ public class ManageProductServlet extends HttpServlet {
         }
     }
 
+
+    private void handleShowEditPanel(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
+        int id = Integer.parseInt(req.getParameter("id"));
+        try{
+            ProductDTO product = ProductHandler.getProductById(id);
+            req.setAttribute("product", product);
+            req.getRequestDispatcher("/edit-product.jsp").forward(req,res);
+        }catch (DatabaseException e){
+            UIErrorHandler.handleDatabaseException(req, res,e);
+        }
+
+    }
     private void editProduct(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
-        System.out.println("editing product...");//todo 
+        int id = Integer.parseInt(req.getParameter("id"));
+
+        // Get upload image.
+        Part part = req.getPart("image");
+        InputStream inputStream = part.getInputStream();
+
+        ProductDTO newValue = new ProductDTO();
+        newValue.setName(req.getParameter("name"));
+        newValue.setDescription(req.getParameter("description"));
+        newValue.setPrice(Integer.parseInt(req.getParameter("price")));
+        newValue.setQuantity(Integer.parseInt(req.getParameter("quantity")));
+
+
+        try {
+            ProductHandler.updateProduct(id, newValue, inputStream);
+            res.sendRedirect("/admin/handle-products");
+        }catch (DatabaseException e){
+            UIErrorHandler.handleDatabaseException(req, res,e);
+        }
     }
 
 }

@@ -4,8 +4,10 @@ import com.example.distlab1.BO.Entities.Product;
 import com.example.distlab1.DB.DatabaseException;
 import com.example.distlab1.UI.DTOs.ProductDTO;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class ProductHandler {
 
@@ -32,6 +34,17 @@ public class ProductHandler {
         return productsToReturn;
     }
 
+    static public void updateProduct(int id, ProductDTO newValues, InputStream image) throws DatabaseException{
+        DBContext db = new DBContext();
+        db.product().updateProduct(id,
+                newValues.getName(),
+                newValues.getDescription(),
+                newValues.getPrice(),
+                newValues.getQuantity(),
+                image);
+
+    }
+
 
     private static ProductDTO mapProduct(Product p){
         ProductDTO productToReturn = new ProductDTO();
@@ -43,4 +56,8 @@ public class ProductHandler {
         productToReturn.setBase64Image(p.getBase64Image());
         return productToReturn;
     }
+
+
+
+
 }
