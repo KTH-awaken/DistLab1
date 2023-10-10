@@ -15,16 +15,12 @@ public class DBActions {
     }
 
 
-    public UserDB user() {
-        return userDb;
-    }
+    public UserDB user() {return userDb;}
 
     public ProductDB product() {
         return productDB;
     }
 
-    public OrderDB order() {
-        return orderDB;
-    }
+    public OrderDB order() {return orderDB;}
 
 }

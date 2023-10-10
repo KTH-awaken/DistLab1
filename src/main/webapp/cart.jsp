@@ -19,44 +19,46 @@
 
 
                     <div class="layout-container">
+                        <div class="cart-scroll">
+                            <div class="flex flex-col h-screen py-4">
+                                <h1 class="font-bold text-3xl mb-4">My Cart</h1>
+                                <div class="p-4 flex-1 " style="max-height: 70%">
+                                    <%
+                                        int totalPrice = 0;
+                                        Object data=session.getAttribute("cart"); if (data !=null) { ArrayList<ProductDTO> products = (ArrayList<ProductDTO>) data;
+                                            for (ProductDTO product : products) {
+                                                totalPrice = (int) (totalPrice + product.getPrice());
+                                            %>
+                                            <div class="border-b-[0.5px] border-black  flex gap-4 pb-3 mb-2">
+                                                <img class="w-24 h-24 object-cover rounded-md"
+                                                    src="data:image/jpg;base64,<%=product.getBase64Image()%>"
+                                                    alt="<%=product.getName()%>">
 
-                        <div class="flex flex-col h-screen py-4">
-                            <h1 class="font-bold text-3xl mb-4">My Cart</h1>
-                            <div class="p-4 flex-1 overflow-scroll" style="max-height: 80%">
-
-                                <% Object data=session.getAttribute("cart"); if (data !=null) { ArrayList<ProductDTO>
-                                    products =
-                                    (ArrayList<ProductDTO>) data;
-                                        for (ProductDTO product : products) {
-                                        %>
-                                        <div class="border-b-[0.5px] border-black  flex gap-4 pb-3 mb-2">
-                                            <img class="w-24 h-24 object-cover rounded-md"
-                                                src="data:image/jpg;base64,<%=product.getBase64Image()%>"
-                                                alt="<%=product.getName()%>">
-
-                                            <div class="flex-1 flex justify-between items-center pr-5">
-                                                <div class="self-start flex flex-col gap-2">
-                                                    <h3>
-                                                        <%=product.getName()%>
-                                                    </h3>
-                                                    <p>$ <%=product.getPrice()%>
-                                                    </p>
+                                                <div class="flex-1 flex justify-between items-center pr-5">
+                                                    <div class="self-start flex flex-col gap-2">
+                                                        <h3>
+                                                            <%=product.getName()%>
+                                                        </h3>
+                                                        <p><%=product.getPrice()%> kr
+                                                        </p>
+                                                    </div>
+                                                    <form action="/remove-from-cart?id=<%=product.getId()%>" method="post">
+                                                        <button type="submit" class="p-2">
+                                                            X
+                                                        </button>
+                                                    </form>
                                                 </div>
-                                                <form action="/remove-from-cart?id=<%=product.getId()%>" method="post">
-                                                    <button type="submit" class="p-2">
-                                                        X
-                                                    </button>
-                                                </form>
                                             </div>
-                                        </div>
+                                            <% } } %>
+                                </div>
+                                    <h3 style="padding: 10px">Order total: <%=totalPrice%> kr</h3>
 
-                                        <% } } %>
+                                <form action="place-order" method="post">
+                                    <button class="w-full bg-[#222222] p-2 rounded-md text-white">Place order</button>
+                                </form>
                             </div>
-
-                            <form action="place-order" method="post">
-                                <button class="w-full bg-[#222222] p-2 rounded-md text-white">Place order</button>
-                            </form>
                         </div>
+
 
                     </div>
 

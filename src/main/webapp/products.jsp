@@ -19,8 +19,7 @@
             <h2 class="my-4">Store.<span
                     style="color: #6e6e73"> Det bästa stället att <br/>köpa dina favoritprodukter.</span></h2>
         </div>
-        <div style="overflow-x: auto;-ms-overflow-style: none;scrollbar-width: none; ">
-            <div class="flex flex-row">
+        <div class="product-scroll" >
                 <%
                     Object data = request.getAttribute("products");
                     if (data != null) {
@@ -38,11 +37,9 @@
                         </span>
                     </a>
                 </div>
-                <%
-                        }
+                <%                        }
                     }
                 %>
-            </div>
         </div>
     </div>
 
