@@ -53,15 +53,16 @@
             for (let i = 0; i < imageData.data.length; i += 4) {
                 sum += imageData.data[i] + imageData.data[i + 1] + imageData.data[i + 2];
             }
-            return sum / (imageData.data.length / 3); // Brightness value (0-255)
+            return sum / (imageData.data.length / 3);
         }
 
         function setTextColor(img, index) {
             const productText = document.getElementById('productText' + index);
             const brightness = getBrightness(img);
-            productText.style.color = brightness > 100.5 ? 'black' : 'white'; // Adjust the threshold as needed
+            productText.style.color = brightness > 100.5 ? 'black' : 'white';
         }
     </script>
+
 
     </body>
 
