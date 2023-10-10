@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Manages database connections and transactions.
+ */
 public class DBManager {
     private static DBManager instance = null;
     private final List<Connection> connectionPool = new ArrayList<>();

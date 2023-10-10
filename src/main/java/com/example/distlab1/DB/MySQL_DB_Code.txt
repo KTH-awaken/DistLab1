@@ -1,0 +1,42 @@
+drop database webshop;
+create database webshop;
+USE webshop;
+
+create table t_users (
+    id int primary key auto_increment,
+    username varchar(255) not null,
+    email varchar(255) not null unique, 
+    password varchar(255) not null,
+    role enum('customer','admin','warehouse') default 'customer'
+
+);
+
+
+create table t_products (
+        id int primary key auto_increment,
+        name varchar(255) not null,
+        description varchar(255) not null,
+        quantity int not null,
+        price int not null,
+        image longblob not null
+);
+
+
+
+create table t_orders (
+    id int primary key auto_increment,
+    user_id int,
+    fullfilled boolean default false,
+    created_date datetime not null default (current_date()),
+    foreign key (user_id) references t_users(id)
+);
+
+create table t_order_product (
+id int primary key auto_increment,
+    order_id int,
+    product_id int,
+    amount int not null default 1,
+
+    foreign key (order_id) references t_orders(id),
+    foreign key (product_id) references t_products(id)
+);

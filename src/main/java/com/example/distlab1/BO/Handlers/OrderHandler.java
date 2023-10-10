@@ -9,7 +9,12 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class OrderHandler {
-
+    /**
+     * Places an order for the specified user and products.
+     * @param userid The ID of the user placing the order.
+     * @param products The products included in the order.
+     * @throws DatabaseException If an error occurs while placing the order.
+     */
     static public void placeOrder(int userid, ArrayList<ProductDTO> products) throws DatabaseException {
         DBContext db = new DBContext();
         ArrayList<Integer> ids = mapProductIds(products);

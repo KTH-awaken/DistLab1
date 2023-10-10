@@ -1,5 +1,7 @@
 package com.example.distlab1.BO.Entities;
-
+/**
+ * Represents a user in the system.
+ */
 public class User {
 
     private int id;
@@ -7,7 +9,10 @@ public class User {
     private String email;
     private String password;
     private String role;
-
+    /**
+     * Gets the ID of the user.
+     * @return The ID of the user.
+     */
     public User(){}
 
     public User(int id, String username, String email, String password, String role) {

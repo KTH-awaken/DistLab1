@@ -1,5 +1,7 @@
 package com.example.distlab1.DB.ItemDB;
-
+/**
+ * Provides actions for interacting with the database.
+ */
 public class DBActions {
 
     private UserDB userDb;
@@ -14,7 +16,10 @@ public class DBActions {
 
     }
 
-
+    /**
+     * Retrieves the user database handler.
+     * @return The user database handler.
+     */
     public UserDB user() {return userDb;}
 
     public ProductDB product() {

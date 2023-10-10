@@ -1,5 +1,7 @@
 package com.example.distlab1.BO.Entities;
-
+/**
+ * Represents a product in the system.
+ */
 public class Product {
 
     private  String name;
@@ -23,6 +25,10 @@ public class Product {
     }
 
 
+    /**
+     * Gets the name of the product.
+     * @return The name of the product.
+     */
     public String getName() {
         return name;
     }

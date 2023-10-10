@@ -10,7 +10,15 @@ import java.util.ArrayList;
 import java.util.Base64;
 
 public class ProductHandler {
-
+    /**
+     * Adds a new product to the database.
+     * @param name The name of the product.
+     * @param description The description of the product.
+     * @param price The price of the product.
+     * @param quantity The quantity of the product in stock.
+     * @param image The image of the product.
+     * @throws DatabaseException If an error occurs while adding the product to the database.
+     */
 
     static public void addProduct(String name, String description, double price, int quantity, InputStream image) throws DatabaseException {
         DBContext db = new DBContext();

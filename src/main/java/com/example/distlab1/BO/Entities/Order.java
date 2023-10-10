@@ -1,7 +1,12 @@
 package com.example.distlab1.BO.Entities;
-
+/**
+ * Represents an order in the system.
+ */
 public class Order {
-
+    /**
+     * Gets the ID of the order.
+     * @return The ID of the order.
+     */
     private Integer id;
     private Integer userId;
     private boolean fulfilled;
